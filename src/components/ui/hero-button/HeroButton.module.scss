@@ -1,0 +1,17 @@
+.heroButton {
+	padding: 16px 14px;
+	border-radius: 12px;
+	font-size: 16px;
+	font-family: var(--font-montserrat), sans-serif;
+	font-weight: 500;
+	color: #4caf50;
+	background-color: #fff;
+	border: 1px #4caf50 solid;
+	transition: all 0.4s ease-in-out;
+
+	&:hover {
+		cursor: pointer;
+		background-color: #4caf50;
+		color: #fff;
+	}
+}

@@ -1,0 +1,17 @@
+.mainProfileButton {
+	color: #fff;
+	background-color: #4caf50;
+	border: 1px #4caf50 solid;
+	border-radius: 12px;
+	width: 100%;
+	padding: 16px 0;
+	font-family: var(--font-montserrat), sans-serif;
+	font-weight: 500;
+	transition: all 0.4s ease-in-out;
+
+	&:hover {
+		cursor: pointer;
+		background-color: transparent;
+		color: #4caf50;
+	}
+}

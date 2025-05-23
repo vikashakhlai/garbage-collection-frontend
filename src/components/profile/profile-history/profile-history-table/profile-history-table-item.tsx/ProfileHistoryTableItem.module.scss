@@ -1,0 +1,24 @@
+.profileHistoryTableItemContainer {
+	padding: 4px 8px;
+	display: flex;
+	align-items: center;
+	border: 1px #4caf50 solid;
+	justify-content: space-between;
+	border-radius: 8px;
+	font-family: var(--font-montserrat), sans-serif;
+
+	font-size: 10px;
+	font-weight: 700;
+
+	td {
+		width: 90px;
+		// max-width: 90px;
+		text-align: left;
+	}
+
+	.profileHistoryTableItemTime {
+		font-size: 8px;
+		font-weight: 600;
+		font-family: var(--font-openSans), sans-serif;
+	}
+}

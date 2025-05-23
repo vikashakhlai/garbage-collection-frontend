@@ -1,0 +1,16 @@
+.activeHeroButton {
+	padding: 16px 6px;
+	border-radius: 12px;
+	font-size: 16px;
+	font-family: var(--font-montserrat), sans-serif;
+	font-weight: 500;
+	color: #fff;
+	background-color: #4caf50;
+	transition: all 0.4s ease-in-out;
+
+	&:hover {
+		cursor: pointer;
+		background-color: #fff;
+		color: #4caf50;
+	}
+}

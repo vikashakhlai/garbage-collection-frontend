@@ -1,0 +1,53 @@
+.selectContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.selectFieldText {
+	font-family: var(--font-montserrat), sans-serif;
+	font-weight: 700;
+	font-size: 20px;
+	color: #333333;
+	transition: all 0.4s ease-in-out;
+	text-align: left;
+}
+
+.selectServices {
+	border: 1px #cccccc solid;
+	width: 100%;
+	padding: 8px;
+	border-radius: 8px;
+	background-color: #fff;
+}
+
+.commentField {
+	resize: none;
+	width: 600px;
+	height: 120px;
+	border: 1px #333333 solid;
+	text-align: left;
+	margin: 0;
+	margin-bottom: 30px;
+	font-family: var(--font-openSans), sans-serif;
+	font-size: 16px;
+	color: #666666;
+	border-radius: 8px;
+}
+
+.priceContainer {
+	text-align: left;
+	margin-bottom: 30px;
+
+	.priceHeader {
+		font-size: 24px;
+		font-family: var(--font-openSans), sans-serif;
+		font-weight: 700;
+	}
+
+	.priceText {
+		font-family: var(--font-openSans), sans-serif;
+		font-size: 18px;
+		color: #666666;
+		font-weight: 700;
+	}
+}

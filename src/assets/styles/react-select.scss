@@ -1,0 +1,67 @@
+.custom-select {
+	&__control {
+		text-align: left;
+		min-height: 44px;
+		border-radius: 8px;
+		border: 1px solid #e5e7eb;
+		transition: all 0.2s ease;
+		box-shadow: none;
+
+		&:hover {
+			border-color: #86efac; // Полузеленый при наведении
+		}
+
+		&--is-focused {
+			border-color: #22c55e !important; // Зеленый при фокусе
+			box-shadow: 0 0 0 1px #22c55e !important;
+		}
+	}
+
+	&__option {
+		text-align: left;
+
+		&--is-focused:not(&--is-selected) {
+			background-color: #dcfce7 !important; // Светло-зеленый при наведении
+		}
+
+		&--is-selected {
+			background-color: #22c55e !important; // Зеленый для выбранного
+			color: white !important;
+		}
+	}
+
+	&__multi-value {
+		background-color: #dcfce7; // Светло-зеленый фон для тегов
+		border-radius: 4px;
+
+		&__label {
+			color: #166534; // Темно-зеленый текст
+			font-size: 0.875rem;
+		}
+
+		&__remove {
+			&:hover {
+				background-color: #86efac; // Полузеленый при наведении на крестик
+				color: #166534;
+			}
+		}
+	}
+
+	&__indicator-separator {
+		background-color: #e5e7eb;
+	}
+
+	&__dropdown-indicator {
+		color: #9ca3af;
+
+		&:hover {
+			color: #22c55e; // Зеленый при наведении
+		}
+	}
+
+	&__clear-indicator {
+		&:hover {
+			color: #ef4444; // Красный при наведении на крестик очистки
+		}
+	}
+}

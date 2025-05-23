@@ -1,0 +1,56 @@
+.reviewItemContainer {
+	padding: 30px 68px;
+	border: 1px #4caf4f41 solid;
+	box-shadow: 0 0 2 #4caf50;
+	border-radius: 12px;
+	width: 340px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.reviewItemPhotoContainer {
+	width: 120px;
+	height: 120px;
+	border-radius: 120px;
+	margin: 0 auto;
+}
+
+.reviewItemPhoto {
+	width: 120px;
+	height: 120px;
+	object-fit: cover;
+	margin: auto;
+	border-radius: 2000px;
+}
+
+.reviewItemUserName {
+	margin-top: 4px;
+	font-family: var(--font-montserrat), sans-serif;
+	font-size: 18px;
+	color: #333333;
+	font-weight: 600;
+	text-align: center;
+}
+
+.starList {
+	display: flex;
+}
+
+.line {
+	margin-top: 30px;
+	height: 2px;
+	width: 220px;
+	background-color: #4caf4f4a;
+}
+
+.reviewItemText {
+	margin-top: 30px;
+	display: block;
+	max-width: 220px;
+	color: #666666;
+	font-size: 16px;
+	font-weight: 400;
+	font-family: var(--font-openSans), sans-serif;
+	text-align: center;
+}

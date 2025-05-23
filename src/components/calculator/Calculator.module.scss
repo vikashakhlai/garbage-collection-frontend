@@ -1,0 +1,63 @@
+.calculatorContainer {
+	width: 100%;
+	text-align: center;
+	margin-bottom: 60px;
+	//
+
+	.calculatorHeader {
+		font-family: var(--font-montserrat), sans-serif;
+		font-weight: 700;
+		font-size: 42px;
+		text-align: center;
+		position: relative;
+		margin: o auto;
+	}
+
+	.calculatorText {
+		color: #666666;
+		text-align: center;
+		margin: 0 auto;
+		font-size: 20px;
+		font-weight: 700;
+		font-family: var(--font-openSans), sans-serif;
+	}
+
+	.calculatorForm {
+		padding: 30px 40px 60px 40px;
+		margin-top: 30px;
+		width: 100%;
+		border-radius: 16px;
+		background-color: #f5fff0;
+		box-shadow: 0 6px 16px #2e8b563d;
+
+		.calculatorFormHeader {
+			font-size: 32px;
+			font-weight: 700;
+			font-family: var(--font-montserrat), sans-serif;
+			margin-bottom: 30px;
+			margin-top: 60px;
+		}
+	}
+}
+
+.checkInputText {
+	font-family: var(--font-montserrat), sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.calculatorFormCountHeader {
+	font-size: 32px;
+	font-weight: 700;
+	font-family: var(--font-montserrat), sans-serif;
+	text-align: left;
+	margin-top: 30px;
+}
+
+.calculatorFormCountText {
+	font-family: var(--font-montserrat), sans-serif;
+	font-weight: 700;
+	font-size: 24px;
+	color: #666666;
+	margin-bottom: 60px;
+}

@@ -1,0 +1,29 @@
+.serviceListItemContainer {
+	width: 348px;
+	min-height: 380px;
+	box-shadow: 0 8px 24px #4caf4f50;
+	border-radius: 12px;
+	text-align: center;
+	padding: 24px 24px 48px 24px;
+
+	.serviceListItemImage {
+		margin-bottom: 12px;
+	}
+
+	.serviceListItemHeader {
+		font-family: var(--font-montserrat), sans-serif;
+		font-size: 20px;
+		font-weight: 700;
+		margin-bottom: 6px;
+	}
+
+	.serviceListItemText {
+		display: block;
+		max-width: 280px;
+		font-family: var(--font-openSans), sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		color: #666666;
+		word-wrap: break-word;
+	}
+}

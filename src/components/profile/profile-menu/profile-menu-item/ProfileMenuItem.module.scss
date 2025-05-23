@@ -1,0 +1,30 @@
+.profileMenuListItem {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	font-family: var(--font-montserrat), sans-serif;
+	gap: 4px;
+	font-weight: 600;
+	font-size: 12px;
+	box-shadow: 0px 8px 24px #4caf4f56;
+	border-radius: 12px;
+	width: 120px;
+	height: 120px;
+	transition: all 0.4s ease-in-out;
+
+	&:hover {
+		cursor: pointer;
+		box-shadow: 0px 8px 24px #4caf4fc0;
+	}
+
+	.profileMenuListItemIcon {
+		width: 52px;
+		height: 52px;
+	}
+
+	.profileMenuListItemHeader {
+		max-width: 100px;
+	}
+}

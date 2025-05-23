@@ -1,0 +1,59 @@
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+}
+
+.modal {
+	background-color: white;
+	border-radius: 8px;
+	padding: 20px;
+	width: 400px;
+	max-width: 90%;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+	margin: 20px 0;
+}
+
+.buttons {
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+}
+
+.button {
+	padding: 8px 16px;
+	border-radius: 4px;
+	border: 1px solid #ddd;
+	background: white;
+	cursor: pointer;
+	transition: all 0.4s ease-in-out;
+
+	&:hover {
+		color: #4caf50;
+		border: 1px #4caf50 solid;
+	}
+}
+
+.primaryButton {
+	background: #4caf50;
+	color: white;
+	border: 1px #4caf50 solid;
+	transition: all 0.4s ease-in-out;
+
+	&:hover {
+		color: white;
+
+		border: 1px #3e9041 solid;
+		background: #3e9041;
+	}
+}

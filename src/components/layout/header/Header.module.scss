@@ -1,0 +1,75 @@
+.headerContainer {
+	padding: 46px 0;
+
+	.headerUserProfileContainer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.headerUserPhoto {
+		height: 36px;
+		width: 36px;
+		border-radius: 200px;
+		object-fit: cover;
+		transition: all 0.4s ease-in-out;
+
+		&:hover {
+			cursor: pointer;
+			border: 1px #4caf50 solid;
+		}
+	}
+}
+
+.headerNavigation {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.headerNavigationList {
+	display: flex;
+	align-items: center;
+	font-size: 24px;
+	gap: 24px;
+	// font-family: var(--font-montserrat), sans-serif;
+
+	font-weight: 700;
+}
+
+.headerNavigationListLink {
+	transition: all 0.4s ease-in-out;
+
+	&:hover {
+		color: #4caf50;
+	}
+}
+
+.headerNavigationListPhone {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.headerNumber {
+	font-size: 24px;
+	font-weight: 700;
+	text-decoration: underline;
+	transition: all 0.4s ease-in-out;
+
+	&:hover {
+		color: #4caf50;
+		cursor: pointer;
+	}
+}
+
+.headerLogIn {
+	transition: all 0.4s ease-in-out;
+
+	&:hover {
+		stroke: #078f07;
+		cursor: pointer;
+	}
+}

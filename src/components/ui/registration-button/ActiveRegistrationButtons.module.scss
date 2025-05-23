@@ -1,0 +1,39 @@
+.activeLoginButtonsContainer {
+	display: flex;
+	gap: 50px;
+	margin-top: 30px;
+
+	.loginButton {
+		border-radius: 12px;
+		width: 100%;
+		padding: 14px 0;
+		font-weight: 700;
+		font-size: 18px;
+		font-family: var(--font-montserrat), sans-serif;
+	}
+
+	.activeLoginButton {
+		border: 1px #ff8c00 solid;
+		background-color: #ff8c00;
+		color: #fff;
+		transition: all 0.4s ease-in-out;
+
+		&:hover {
+			cursor: pointer;
+			background-color: transparent;
+			color: #ff8c00;
+		}
+	}
+
+	.activeLoginRegistrationButton {
+		border: 1px #4caf50 solid;
+		color: #4caf50;
+		transition: all 0.4s ease-in-out;
+
+		&:hover {
+			cursor: pointer;
+			background-color: #4caf50;
+			color: #fff;
+		}
+	}
+}

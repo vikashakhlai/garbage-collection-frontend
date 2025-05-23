@@ -1,0 +1,39 @@
+.aboutIcon {
+	position: absolute;
+	right: 60px;
+	width: 48px;
+	height: 48px;
+}
+
+.aboutHeader {
+	font-family: var(--font-montserrat), sans-serif;
+	font-weight: 700;
+	font-size: 42px;
+	text-align: center;
+	position: relative;
+	margin: 0 auto;
+	margin-bottom: 30px;
+}
+
+.aboutBlockList {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.aboutBlockHeader {
+	font-family: var(--font-montserrat), sans-serif;
+	font-weight: 700;
+	font-size: 24px;
+	text-align: left;
+	position: relative;
+	margin: 0 auto;
+}
+
+.aboutText {
+	font-family: var(--font-openSans), sans-serif;
+	font-size: 18px;
+	text-align: justify;
+	color: #333333;
+	margin-top: 30px;
+}

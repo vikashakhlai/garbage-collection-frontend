@@ -1,0 +1,79 @@
+.footerContainer {
+	// position: absolute;
+	// bottom: 0;
+	// left: 0;
+	width: 100%;
+	background-color: #4caf50;
+}
+
+.footerList {
+	width: 1110px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 100px 0;
+	margin: 0 auto;
+	background-color: #4caf50;
+}
+
+.footerListInfo {
+	color: #fff;
+	max-width: 320px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	// font-family: var(--font-montserrat);
+	font-family: var(--font-openSans);
+	font-weight: 500;
+}
+
+.footerListInfoItem {
+	display: flex;
+	gap: 2px;
+	font-size: 16px;
+	font-weight: 500;
+
+	.footerListInfoItemHeaderText {
+		font-family: var(--font-montserrat);
+		font-weight: 600;
+		font-size: 18px;
+	}
+}
+
+.footerListInfoItemText {
+}
+
+.footerListNavigationList {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+	color: #fff;
+	font-family: var(--font-montserrat);
+	font-weight: 700;
+	font-size: 20px;
+}
+
+.footerListNavigationListItem {
+	transition: all 0.4s ease-in-out;
+
+	&:hover {
+		color: #078f07;
+		cursor: pointer;
+	}
+}
+
+.footerListSocial {
+	display: flex;
+	gap: 36px;
+}
+
+.viberIcon,
+.whatsAppIcon,
+.telegramIcon {
+	transition: all 0.4s ease-in-out;
+
+	&:hover {
+		cursor: pointer;
+		filter: invert(60%) sepia(52%) saturate(430%) hue-rotate(85deg);
+	}
+}
