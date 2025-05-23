@@ -11,12 +11,20 @@ const nextConfig = {
 		return [
 			{
 				source: '/api/:path*',
-				destination: 'http://localhost:4200/api/:path*',
+				destination: 'https://garbage-collection.netlify.app/api/:path*',
 			},
+			// {
+			// 	source: '/api/:path*',
+			// 	destination: 'http://localhost:4200/api/:path*',
+			// },
 			{
 				source: '/uploads/:path*',
-				destination: 'http://localhost:4200/uploads/:path*',
+				destination: 'https://garbage-collection.netlify.app/uploads/:path*',
 			},
+			// {
+			// 	source: '/uploads/:path*',
+			// 	destination: 'http://localhost:4200/uploads/:path*',
+			// },
 		];
 	},
 };

@@ -11,7 +11,7 @@ export const ProfileHistory: React.FC<Props> = ({ className }) => {
 	return (
 		<div className={cn(className, styles.profileHistoryContainer)}>
 			<h2 className={styles.profileHistoryHeader}>История заказов</h2>
-			<ProfileHistoryTable itemsPerPage={5} />
+			<ProfileHistoryTable itemsPerPage={3} />
 			{/* <ProfilePagination itemsPerPage={5} /> */}
 		</div>
 	);
