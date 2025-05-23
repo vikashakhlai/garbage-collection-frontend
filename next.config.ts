@@ -1,5 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	images: {
+		dangerouslyAllowSVG: true,
+		contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'garbage-collection-backend.onrender.com',
+				port: '',
+				pathname: '/**', // Разрешаем абсолютно все пути
+			},
+		],
+	},
 	reactStrictMode: false,
 	poweredByHeader: false,
 	env: {

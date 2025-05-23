@@ -17,11 +17,13 @@ export const ServiceListItem: React.FC<Props> = ({
 	// text,
 	// imageUrl,
 }) => {
+	const imagePath = `https://garbage-collection-backend.onrender.com${data.image}`;
 	return (
 		<li className={styles.serviceListItemContainer}>
 			<Image
 				className={styles.serviceListItemImage}
-				src={data.image}
+				// src={`https://garbage-collection-backend.onrender.com/uploads/images/trash.png`}
+				src={imagePath}
 				alt='service_image'
 				width={1000}
 				height={1000}
