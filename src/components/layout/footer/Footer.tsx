@@ -1,6 +1,5 @@
 'use client';
 
-import { useAuth } from '@/hooks/useAuth';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -12,7 +11,7 @@ interface Props {
 }
 
 export const Footer: React.FC<Props> = ({}) => {
-	const { user } = useAuth();
+	// const { user } = useAuth();
 
 	return (
 		<footer className={styles.footerContainer}>
