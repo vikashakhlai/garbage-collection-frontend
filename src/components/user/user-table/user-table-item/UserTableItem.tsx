@@ -17,7 +17,7 @@ interface Props {
 
 export const UserTableItem: React.FC<Props> = ({ className, data }) => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
-	console.log(data);
+
 	const { confirmAsync, unConfirmAsync } = useUsers();
 
 	const handleConfirm = () => {

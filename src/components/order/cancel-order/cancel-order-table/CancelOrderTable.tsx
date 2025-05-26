@@ -16,7 +16,7 @@ export const CancelOrderTable: React.FC<Props> = ({
 	itemsPerPage,
 }) => {
 	const { activeOrders } = useUserOrders();
-	console.log(activeOrders.data);
+
 	const [currentPage, setCurrentPage] = useState(1);
 	const totalPages = activeOrders.data
 		? Math.ceil(activeOrders.data.length / itemsPerPage)

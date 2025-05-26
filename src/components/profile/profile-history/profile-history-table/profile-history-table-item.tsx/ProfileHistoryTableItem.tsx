@@ -21,7 +21,7 @@ export const ProfileHistoryTableItem: React.FC<Props> = ({
 				<span className={styles.profileHistoryTableItemTime}>{data.time}</span>
 			</td>
 			<td>{data.services && data?.services[0].service.name}</td>
-			<td>{data.address}</td>
+			<td className={styles.orderTableItemAddress}>{data.address}</td>
 			<td>{data.totalPrice}</td>
 			<td>{data.comment}</td>
 			{data.isCompleted === true && (

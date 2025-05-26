@@ -13,7 +13,6 @@ interface Props {
 
 export const ProfileMainInfo: React.FC<Props> = ({ className }) => {
 	const { data } = useUserProfile();
-	console.log(data);
 
 	return (
 		<div className={cn(className, styles.profileMainContainer)}>
@@ -35,11 +34,21 @@ export const ProfileMainInfo: React.FC<Props> = ({ className }) => {
 							: 'Грузчик'
 						: 'Неизвестный'
 					: 'Администратор'} */}
-				{data?.role.length && data.role !== 'admin'
-					? data.type.length && data.type === 'driver'
-						? 'Водитель'
-						: 'Грузчик'
-					: 'Администратор'}
+				{data?.role.length && data.role === 'admin' && 'Администратор'}
+				{data?.type.length &&
+					data.role === 'user' &&
+					data.type === 'client' &&
+					'Клиент'}
+				{data?.type.length &&
+					data.role === 'user' &&
+					data.type === 'worker' &&
+					data.workerType === 'driver' &&
+					'Водитель'}
+				{data?.type.length &&
+					data.role === 'user' &&
+					data.type === 'worker' &&
+					data.workerType === 'loader' &&
+					'Грузчик'}
 			</span>
 			<div className={styles.profileMainLine}></div>
 			<ul className={styles.profileMainList}>

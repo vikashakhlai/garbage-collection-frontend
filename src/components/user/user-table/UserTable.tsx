@@ -13,7 +13,7 @@ interface Props {
 
 export const UserTable: React.FC<Props> = ({ className, itemsPerPage }) => {
 	const { data } = useUsers();
-	console.log(data);
+
 	const [currentPage, setCurrentPage] = useState(1);
 	const totalPages = data ? Math.ceil(data.length / itemsPerPage) : 1;
 

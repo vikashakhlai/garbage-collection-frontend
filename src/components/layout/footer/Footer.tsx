@@ -73,11 +73,12 @@ export const Footer: React.FC<Props> = ({}) => {
 								<Link href='#review'>Отзывы</Link>
 							</li>
 							<li className={styles.footerListNavigationListItem}>
-								{user !== null ? (
+								{/* {user !== null ? (
 									<Link href='/logout'>Выход из системы</Link>
 								) : (
 									<Link href='/login'>Вход в систему</Link>
-								)}
+								)} */}
+								<Link href='/login'>Вход в систему</Link>
 							</li>
 						</ul>
 					</nav>

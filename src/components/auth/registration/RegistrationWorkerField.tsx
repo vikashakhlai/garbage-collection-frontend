@@ -138,7 +138,7 @@ const RegistrationWorkerField: FC<IRegistrationField> = ({
 			/>
 			<Field
 				{...register(
-					'registrationPassword',
+					'password',
 					isPasswordRequired
 						? {
 								required: 'Введите пароль',

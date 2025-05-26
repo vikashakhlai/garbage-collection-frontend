@@ -45,12 +45,17 @@ export const CreateOrderForm: React.FC<Props> = ({ className }) => {
 		createAsync(res);
 	};
 
+	const handleAddressChange = (newAddress: string) => {
+		setValue('address', newAddress, { shouldValidate: true });
+	};
+
 	return (
 		<form
 			className={cn(className, styles.createOrderFormContainer)}
 			onSubmit={handleSubmit(onSubmit)}
 		>
 			<CreateOrderFormField
+				onAddressChange={handleAddressChange}
 				services={services ? services : []}
 				formState={formState}
 				register={registerInput}

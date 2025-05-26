@@ -79,22 +79,22 @@ export const ProfileMenu: React.FC<Props> = ({ className }) => {
 								text='Список пользователей'
 								link='/manage/users'
 							/>
-							<ProfileMenuItem
+							{/* <ProfileMenuItem
 								icon={Trash2}
 								text='Отмена заказа'
 								link='/cancel-order'
-							/>
+							/> */}
 							<ProfileMenuItem
 								icon={MessagesSquareIcon}
 								text='Техническая поддержка'
 								link='/support'
 							/>
 							<ProfileMenuItem icon={FileText} text='О нас' link='/about' />
-							<ProfileMenuItem
+							{/* <ProfileMenuItem
 								icon={LucideTicketsPlane}
 								text='Добавить права'
 								link='/add-license'
-							/>
+							/> */}
 						</Slider>
 					</ul>
 				</div>

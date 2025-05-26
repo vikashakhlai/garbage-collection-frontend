@@ -21,6 +21,7 @@ interface ICreateOrderField {
 	control: any;
 	watch: any;
 	setValue: any;
+	onAddressChange: any;
 }
 
 export const CreateOrderFormField: React.FC<ICreateOrderField> = ({
@@ -30,6 +31,7 @@ export const CreateOrderFormField: React.FC<ICreateOrderField> = ({
 	control,
 	watch,
 	setValue,
+	onAddressChange,
 }) => {
 	// const { data } = useServices();
 	const [address, setAddress] = useState<string>('');
@@ -87,7 +89,7 @@ export const CreateOrderFormField: React.FC<ICreateOrderField> = ({
 				placeholder='Время заказа:'
 				error={errors.time}
 			/>
-			<Field
+			{/* <Field
 				{...register('address', {
 					required: 'Введите адрес',
 				})}
@@ -95,6 +97,16 @@ export const CreateOrderFormField: React.FC<ICreateOrderField> = ({
 				onChange={e => setAddress(e.target.value)}
 				placeholder='Адрес:'
 				error={errors.address}
+			/> */}
+			<Field
+				{...register('address', {
+					required: 'Введите адрес',
+				})}
+				placeholder='Адрес:'
+				error={errors.address}
+				onChange={e => {
+					setValue('address', e.target.value, { shouldValidate: true });
+				}}
 			/>
 
 			<Field
@@ -112,7 +124,7 @@ export const CreateOrderFormField: React.FC<ICreateOrderField> = ({
 				error={errors.floor}
 			/>
 
-			<LeafletMap onAddressChange={setAddress} />
+			<LeafletMap onAddressChange={onAddressChange} />
 			<div className={styles.selectContainer}>
 				<label className={styles.selectFieldText}>
 					<span>Комментарий:</span>

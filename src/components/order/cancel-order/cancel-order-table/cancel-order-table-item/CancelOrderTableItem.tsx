@@ -31,7 +31,7 @@ export const CancelOrderTableItem: React.FC<Props> = ({ className, data }) => {
 				<span className={styles.cancelOrderTableItemTime}>{data.time}</span>
 			</td>
 			<td>{data.services && data?.services[0].service.name}</td>
-			<td>{data.address}</td>
+			<td className='w-[220px]'>{data.address}</td>
 			<td>{data.totalPrice}</td>
 			<td>{data.comment}</td>
 			<td className='flex flex-col items-center justify-center'>

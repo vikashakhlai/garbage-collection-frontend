@@ -1,6 +1,8 @@
 'use client';
 
 import { useOrders } from '@/hooks/order/useOrders';
+import { useAuth } from '@/hooks/useAuth';
+import { IOrder } from '@/types/order.types';
 import cn from 'classnames';
 import { useState } from 'react';
 import styles from './ConfirmOrderTable.module.scss';
@@ -16,6 +18,15 @@ export const ConfirmOrderTable: React.FC<Props> = ({
 	itemsPerPage,
 }) => {
 	const { activeOrders } = useOrders();
+	const { user } = useAuth();
+
+	const orders: IOrder[] =
+		user.workerType &&
+		activeOrders.data?.filter(
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			(el: any) => el.services[0].service.workerType === user.workerType
+		);
+
 	const [currentPage, setCurrentPage] = useState(1);
 	const totalPages = activeOrders.data
 		? Math.ceil(activeOrders.data.length / itemsPerPage)
@@ -58,8 +69,8 @@ export const ConfirmOrderTable: React.FC<Props> = ({
 		<>
 			<table className={cn(className, styles.cancelOrderTable)}>
 				<tbody className='flex flex-col gap-1'>
-					{activeOrders.data ? (
-						activeOrders.data
+					{orders ? (
+						orders
 							.slice(
 								(currentPage - 1) * itemsPerPage,
 								currentPage * itemsPerPage

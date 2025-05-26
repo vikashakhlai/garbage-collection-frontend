@@ -26,8 +26,6 @@ export const ConfirmOrderTableItem: React.FC<Props> = ({ className, data }) => {
 		// toastr.success('Заказ', 'Заказ успешно отменен');
 	};
 
-	console.log(data);
-
 	return (
 		<tr className={cn(className, styles.cancelOrderTableItemContainer)}>
 			<td className='flex flex-col justify-center items-center'>
@@ -35,7 +33,7 @@ export const ConfirmOrderTableItem: React.FC<Props> = ({ className, data }) => {
 				<span className={styles.cancelOrderTableItemTime}>{data.time}</span>
 			</td>
 			<td>{data.services && data?.services[0].service.name}</td>
-			<td>{data.address}</td>
+			<td className={styles.orderTableItemAddress}>{data.address}</td>
 			<td>{data.totalPrice}</td>
 			<td>{data.comment}</td>
 			{data?.services &&

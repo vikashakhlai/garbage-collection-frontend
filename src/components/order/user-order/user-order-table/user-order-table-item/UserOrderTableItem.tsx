@@ -20,7 +20,7 @@ export const UserOrderTableItem: React.FC<Props> = ({ className, data }) => {
 				<span className={styles.cancelOrderTableItemTime}>{data.time}</span>
 			</td>
 			<td>{data.services && data?.services[0].service.name}</td>
-			<td>{data.address}</td>
+			<td className={styles.orderTableItemAddress}>{data.address}</td>
 			<td>{data.totalPrice}</td>
 			<td>{data.comment}</td>
 			{data.Worker ? (
