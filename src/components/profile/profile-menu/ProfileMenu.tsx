@@ -3,6 +3,8 @@
 import { useAuth } from '@/hooks/useAuth';
 import cn from 'classnames';
 import {
+	ArrowLeft,
+	ArrowRight,
 	ClipboardEdit,
 	FilePlus,
 	FileText,
@@ -24,6 +26,26 @@ interface Props {
 export const ProfileMenu: React.FC<Props> = ({ className }) => {
 	const { user } = useAuth();
 
+	const CustomPrevArrow = ({ onClick }: { onClick?: () => void }) => (
+		<button
+			onClick={onClick}
+			className='absolute left-0 top-1/2 z-10 -translate-y-1/2 transform rounded-full bg-green-600 p-1 text-white opacity-75 hover:opacity-100 focus:outline-none hover:cursor-pointer'
+			aria-label='Previous slide'
+		>
+			<ArrowLeft size={12} />
+		</button>
+	);
+
+	const CustomNextArrow = ({ onClick }: { onClick?: () => void }) => (
+		<button
+			onClick={onClick}
+			className='absolute right-0 top-1/2 z-10 -translate-y-1/2 transform rounded-full bg-green-600 p-1 text-white opacity-75 hover:opacity-100 focus:outline-none hover:cursor-pointer'
+			aria-label='Next slide'
+		>
+			<ArrowRight size={12} />
+		</button>
+	);
+
 	const settings = {
 		dots: false,
 		infinite: true,
@@ -31,6 +53,8 @@ export const ProfileMenu: React.FC<Props> = ({ className }) => {
 		slidesToShow: 3,
 		// slidesToShow: 4,
 		slidesToScroll: 1,
+		prevArrow: <CustomPrevArrow />,
+		nextArrow: <CustomNextArrow />,
 	};
 
 	return (
