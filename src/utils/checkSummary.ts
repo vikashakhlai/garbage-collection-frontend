@@ -3,7 +3,6 @@ import { ICalculateInput } from '@/components/calculator/calculator.interface';
 export const checkSummary = ({
 	cargo,
 	forCity,
-	dimensions,
 	distance = 0,
 	floor,
 	furniture,
