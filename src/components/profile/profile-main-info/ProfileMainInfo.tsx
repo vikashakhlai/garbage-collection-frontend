@@ -26,13 +26,20 @@ export const ProfileMainInfo: React.FC<Props> = ({ className }) => {
 				{data?.middleName.length ? data.middleName : ''}
 			</h2>
 			<span className={styles.profileMainUserType}>
-				{data?.type.length
-					? data.type === 'client'
-						? 'Клиент'
-						: data?.workerType === 'driver'
+				{/* {data?.type.length
+					? data.role !== 'admin'
+						? data.type === 'client'
+							? 'Клиент'
+							: data?.workerType === 'driver'
+							? 'Водитель'
+							: 'Грузчик'
+						: 'Неизвестный'
+					: 'Администратор'} */}
+				{data?.role.length && data.role !== 'admin'
+					? data.type.length && data.type === 'driver'
 						? 'Водитель'
 						: 'Грузчик'
-					: 'Неизвестный'}
+					: 'Администратор'}
 			</span>
 			<div className={styles.profileMainLine}></div>
 			<ul className={styles.profileMainList}>

@@ -44,12 +44,20 @@ export const HeaderList: React.FC<Props> = ({ className }) => {
 						className={styles.logoutButton}
 						aria-label='Logout'
 					>
-						<LogOut className={styles.headerLogIn} color='#4CAF50' />
+						<LogOut
+							className={styles.headerLogIn}
+							color='#4CAF50'
+							strokeWidth={1}
+						/>
 					</button>
 				</div>
 			) : (
 				<Link href='/login' className={styles.loginLink}>
-					<LogIn className={styles.headerLogIn} color='#4CAF50' />
+					<LogIn
+						className={styles.headerLogIn}
+						color='#4CAF50'
+						strokeWidth={1}
+					/>
 				</Link>
 			)}
 		</div>

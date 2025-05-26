@@ -23,12 +23,23 @@ export const Review: React.FC<Props> = ({ className }) => {
 		autoplaySpeed: 5000,
 		cssEase: 'linear',
 		arrows: false,
+		responsive: [
+			{
+				breakpoint: 768, // На мобильных (до 768px)
+				settings: {
+					swipe: false, // Отключаем свайп
+					adaptiveHeight: true, // Автовысота под контент
+					slidesToShow: 1,
+				},
+			},
+		],
 	};
 
 	return (
 		<section className={cn(className, styles.reviewContainer)} id='review'>
 			<MainHeader text='Отзывы' />
-			<ul className={`${styles.reviewList} slider-container w-[1066px]`}>
+			<ul className={`${styles.reviewList} slider-container`}>
+				{/* <ul className={`${styles.reviewList} slider-container w-[1066px]`}> */}
 				<Slider {...settings}>
 					<ReviewItem />
 					<ReviewItem />

@@ -41,23 +41,6 @@ body {
 	color: var(--foreground);
 }
 
-.slick-dots li button:before {
-	transform: scale(1.5); /* Увеличивает точки на 50% */
-}
-
-.slick-dots li.slick-active button:before {
-	color: #4caf50 !important; /* Цвет активной точки */
-	transform: scale(1.5);
-}
-
-.slick-prev:before,
-.slick-next:before {
-	color: #4caf50 !important; /* Измените на нужный цвет */
-	font-size: 20px; /* Можно изменить размер */
-}
-
-/* Для hover-состояния */
-.slick-prev:hover:before,
-.slick-next:hover:before {
-	color: #136e17 !important;
+input[type='range'] {
+	accent-color: #4caf50;
 }

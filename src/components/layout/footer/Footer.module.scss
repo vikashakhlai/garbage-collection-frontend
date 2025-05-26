@@ -7,13 +7,31 @@
 }
 
 .footerList {
-	width: 1110px;
+	width: 100%;
+	max-width: 576px;
+	// width: 1110px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 100px 0;
 	margin: 0 auto;
 	background-color: #4caf50;
+
+	@media (min-width: 576px) {
+		max-width: 768px;
+	}
+
+	@media (min-width: 768px) {
+		max-width: 992px;
+	}
+
+	@media (min-width: 992px) {
+		max-width: 1110px;
+	}
+
+	@media (min-width: 1200px) {
+		width: 1110px;
+	}
 }
 
 .footerListInfo {
@@ -40,7 +58,15 @@
 	}
 }
 
-.footerListInfoItemText {
+.footerListInfoItemLink {
+	display: flex;
+	align-items: center;
+	gap: 2px;
+	transition: all 0.4s ease-in-out;
+
+	&:hover {
+		color: #078f07;
+	}
 }
 
 .footerListNavigationList {

@@ -13,7 +13,7 @@ export const AuthService = {
 	async login(type: string, password: string, phone: string) {
 		const response = await axiosClassic.post<IAuthResponse>(
 			getAuthUrl('login'),
-			{ phone, type, password }
+			{ password, phone, type }
 		);
 		if (response.data.accessToken) saveToStorage(response.data);
 

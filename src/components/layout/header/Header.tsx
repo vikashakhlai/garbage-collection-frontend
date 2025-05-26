@@ -1,3 +1,5 @@
+'use client';
+
 import { HeaderButton } from '@/components/ui/header-button/HeaderButton';
 
 import { Car, PhoneCall } from 'lucide-react';
@@ -15,7 +17,7 @@ export const Header: React.FC<Props> = ({}) => {
 		<header className={styles.headerContainer}>
 			<nav className={styles.headerNavigation}>
 				<Link href={'/'}>
-					<Car color='#4CAF50' size={40} strokeWidth={1} />
+					<Car className={styles.headerIcon} color='#4CAF50' strokeWidth={1} />
 				</Link>
 				<ul className={styles.headerNavigationList}>
 					<li>
@@ -39,7 +41,9 @@ export const Header: React.FC<Props> = ({}) => {
 				</ul>
 				<ul>
 					<li className={styles.headerNavigationListPhone}>
-						<span className={styles.headerNumber}>+375291234567</span>
+						<span className={styles.headerNumber}>
+							<Link href='tel:+375291234567'>+375291234567</Link>
+						</span>
 						<PhoneCall color='#4CAF50' />
 					</li>
 				</ul>

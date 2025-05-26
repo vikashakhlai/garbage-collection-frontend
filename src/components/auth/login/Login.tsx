@@ -26,6 +26,7 @@ export const Login: React.FC<Props> = ({}) => {
 		handleSubmit,
 		formState,
 		reset,
+		setValue,
 	} = useForm<ILoginInput>({
 		mode: 'onChange',
 	});
@@ -36,8 +37,6 @@ export const Login: React.FC<Props> = ({}) => {
 	// const loginWorker = (data: any) => {};
 
 	const onSubmit: SubmitHandler<ILoginInput> = data => {
-		// if (type === 'client') alert(JSON.stringify({ ...data, type }));
-		// else if (type === 'worker') alert(JSON.stringify({ ...data, type }));
 		login({ ...data, type: type });
 		reset();
 	};
@@ -48,6 +47,7 @@ export const Login: React.FC<Props> = ({}) => {
 				<h2 className={styles.loginHeader}>Вход</h2>
 				<LoginChangeButton setType={setType} type={type} />
 				<LoginField
+					setValue={setValue}
 					formState={formState}
 					register={registerInput}
 					isPasswordRequired

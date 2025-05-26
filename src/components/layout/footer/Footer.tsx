@@ -1,5 +1,9 @@
+'use client';
+
+import { useAuth } from '@/hooks/useAuth';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import styles from './Footer.module.scss';
 
@@ -8,6 +12,8 @@ interface Props {
 }
 
 export const Footer: React.FC<Props> = ({}) => {
+	const { user } = useAuth();
+
 	return (
 		<footer className={styles.footerContainer}>
 			<ul className={styles.footerList}>
@@ -19,33 +25,59 @@ export const Footer: React.FC<Props> = ({}) => {
 							</h4>
 						</li>
 						<li className={styles.footerListInfoItem}>
-							<MapPin />
-							<span className={styles.footerListInfoItemText}>
-								г. Минск, ул. Первомайская д.14
-							</span>
+							<Link
+								className={styles.footerListInfoItemLink}
+								href='https://maps.app.goo.gl/oFavY1dK8LitnxWL9'
+								target='_blank'
+							>
+								<MapPin />
+								<span className={styles.footerListInfoItemText}>
+									г. Минск, ул. Первомайская д.14
+								</span>
+							</Link>
 						</li>
 						<li className={styles.footerListInfoItem}>
-							<Phone />
-							<span className={styles.footerListInfoItemText}>
-								+375291234567
-							</span>
+							<Link
+								href='tel:+375291234567'
+								className={styles.footerListInfoItemLink}
+							>
+								<Phone />
+								<span className={styles.footerListInfoItemText}>
+									+375291234567
+								</span>
+							</Link>
 						</li>
 						<li className={styles.footerListInfoItem}>
-							<Mail />
-							<span className={styles.footerListInfoItemText}>
-								user@mail.ru
-							</span>
+							<Link
+								href='mailto:user@mail.ru'
+								className={styles.footerListInfoItemLink}
+							>
+								<Mail />
+								<span className={styles.footerListInfoItemText}>
+									user@mail.ru
+								</span>
+							</Link>
 						</li>
 					</ul>
 				</li>
 				<li>
 					<nav>
 						<ul className={styles.footerListNavigationList}>
-							<li className={styles.footerListNavigationListItem}>Услуги</li>
-							<li className={styles.footerListNavigationListItem}>Цены</li>
-							<li className={styles.footerListNavigationListItem}>Отзывы</li>
 							<li className={styles.footerListNavigationListItem}>
-								Вход в систему
+								<Link href='#services'>Услуги</Link>
+							</li>
+							<li className={styles.footerListNavigationListItem}>
+								<Link href='#calculator'>Цены</Link>
+							</li>
+							<li className={styles.footerListNavigationListItem}>
+								<Link href='#review'>Отзывы</Link>
+							</li>
+							<li className={styles.footerListNavigationListItem}>
+								{user !== null ? (
+									<Link href='/logout'>Выход из системы</Link>
+								) : (
+									<Link href='/login'>Вход в систему</Link>
+								)}
 							</li>
 						</ul>
 					</nav>
@@ -53,34 +85,40 @@ export const Footer: React.FC<Props> = ({}) => {
 				<li>
 					<ul className={styles.footerListSocial}>
 						<li>
-							<Image
-								src={'/icons/viber.svg'}
-								className={styles.viberIcon}
-								alt='viber'
-								color='#fff'
-								width={60}
-								height={60}
-							/>
+							<Link href='https://www.viber.com/ru/'>
+								<Image
+									src={'/icons/viber.svg'}
+									className={styles.viberIcon}
+									alt='viber'
+									color='#fff'
+									width={60}
+									height={60}
+								/>
+							</Link>
 						</li>
 						<li>
-							<Image
-								src={'/icons/whatsapp.svg'}
-								className={styles.whatsAppIcon}
-								alt='whatsapp'
-								color='#fff'
-								width={60}
-								height={60}
-							/>
+							<Link href='https://www.whatsapp.com/?lang=ru_RU'>
+								<Image
+									src={'/icons/whatsapp.svg'}
+									className={styles.whatsAppIcon}
+									alt='whatsapp'
+									color='#fff'
+									width={60}
+									height={60}
+								/>
+							</Link>
 						</li>
 						<li>
-							<Image
-								src={'/icons/telegram.svg'}
-								className={styles.telegramIcon}
-								alt='telegram'
-								color='#fff'
-								width={60}
-								height={60}
-							/>
+							<Link href='https://web.telegram.org/k/'>
+								<Image
+									src={'/icons/telegram.svg'}
+									className={styles.telegramIcon}
+									alt='telegram'
+									color='#fff'
+									width={60}
+									height={60}
+								/>
+							</Link>
 						</li>
 					</ul>
 				</li>

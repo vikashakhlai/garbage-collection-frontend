@@ -2,6 +2,7 @@
 'use client';
 
 import Field from '@/components/ui/form-elements/Field';
+import { formatPhone } from '@/shared/regex';
 
 import dynamic from 'next/dynamic';
 import { FC } from 'react';
@@ -12,6 +13,7 @@ interface IRegistrationField {
 	formState: FormState<any>;
 	isPasswordRequired?: boolean;
 	control: any;
+	setValue: any;
 }
 
 const CustomSelect = dynamic(
@@ -32,6 +34,7 @@ const RegistrationClientField: FC<IRegistrationField> = ({
 	formState: { errors },
 	isPasswordRequired = false,
 	control,
+	setValue,
 }) => {
 	const options = [
 		{ value: 'male', label: 'Мужской' },
@@ -76,12 +79,12 @@ const RegistrationClientField: FC<IRegistrationField> = ({
 			<Field
 				{...register('phone', {
 					required: 'Введите номер телефона',
-					// pattern: {
-					// 	value: validPhone,
-					// 	message: 'Please enter a valid phone',
-					// },
 				})}
+				type='tel'
 				placeholder='Номер телефона:'
+				onChange={e => {
+					setValue('phone', formatPhone(e.target.value));
+				}}
 				error={errors.phone}
 			/>
 			<Controller

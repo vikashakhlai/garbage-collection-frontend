@@ -1,19 +1,74 @@
 .headerContainer {
-	padding: 46px 0;
+	padding: 12px 0;
+
+	@media (min-width: 576px) {
+		padding: 24px 0;
+	}
+
+	@media (min-width: 768px) {
+		padding: 32px 0;
+	}
+
+	@media (min-width: 992px) {
+		padding: 38px 0;
+	}
+
+	@media (min-width: 1200px) {
+		padding: 46px 0;
+	}
+
+	.headerIcon {
+		width: 24px;
+		height: 24px;
+
+		@media (min-width: 576px) {
+			width: 28px;
+			height: 28px;
+		}
+
+		@media (min-width: 768px) {
+			width: 32px;
+			height: 32px;
+		}
+
+		@media (min-width: 992px) {
+			width: 36px;
+			height: 36px;
+		}
+
+		@media (min-width: 1200px) {
+			width: 40px;
+			height: 40px;
+		}
+	}
 
 	.headerUserProfileContainer {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: 8px;
+		gap: 4px;
+
+		@media (min-width: 768px) {
+			gap: 8px;
+		}
 	}
 
 	.headerUserPhoto {
-		height: 36px;
-		width: 36px;
+		height: 24px;
+		width: 24px;
 		border-radius: 200px;
 		object-fit: cover;
 		transition: all 0.4s ease-in-out;
+
+		@media (min-width: 576px) {
+			height: 30px;
+			width: 30px;
+		}
+
+		@media (min-width: 768px) {
+			height: 36px;
+			width: 36px;
+		}
 
 		&:hover {
 			cursor: pointer;
@@ -32,9 +87,29 @@
 .headerNavigationList {
 	display: flex;
 	align-items: center;
-	font-size: 24px;
-	gap: 24px;
+	font-size: 14px;
+	gap: 12px;
 	// font-family: var(--font-montserrat), sans-serif;
+
+	@media (min-width: 576px) {
+		font-size: 16px;
+		gap: 12px;
+	}
+
+	@media (min-width: 768px) {
+		font-size: 18px;
+		gap: 14px;
+	}
+
+	@media (min-width: 992px) {
+		font-size: 20px;
+		gap: 18px;
+	}
+
+	@media (min-width: 1200px) {
+		font-size: 24px;
+		gap: 24px;
+	}
 
 	font-weight: 700;
 }
@@ -48,16 +123,32 @@
 }
 
 .headerNavigationListPhone {
-	display: flex;
-	align-items: center;
-	gap: 4px;
+	display: none;
+
+	@media (min-width: 680px) {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+	}
 }
 
 .headerNumber {
-	font-size: 24px;
+	font-size: 16px;
 	font-weight: 700;
 	text-decoration: underline;
 	transition: all 0.4s ease-in-out;
+
+	@media (min-width: 768px) {
+		font-size: 18px;
+	}
+
+	@media (min-width: 992px) {
+		font-size: 20px;
+	}
+
+	@media (min-width: 1200px) {
+		font-size: 24px;
+	}
 
 	&:hover {
 		color: #4caf50;
@@ -65,8 +156,22 @@
 	}
 }
 
-.headerLogIn {
+.headerLogIn,
+.headerLogOut {
 	transition: all 0.4s ease-in-out;
+
+	height: 22px;
+	width: 22px;
+
+	@media (min-width: 576px) {
+		height: 28px;
+		width: 28px;
+	}
+
+	@media (min-width: 768px) {
+		height: 34px;
+		width: 34px;
+	}
 
 	&:hover {
 		stroke: #078f07;

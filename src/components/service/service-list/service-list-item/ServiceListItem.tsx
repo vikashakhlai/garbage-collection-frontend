@@ -22,7 +22,6 @@ export const ServiceListItem: React.FC<Props> = ({
 		<li className={styles.serviceListItemContainer}>
 			<Image
 				className={styles.serviceListItemImage}
-				// src={`https://garbage-collection-backend.onrender.com/uploads/images/trash.png`}
 				src={imagePath}
 				alt='service_image'
 				width={1000}

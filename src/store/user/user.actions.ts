@@ -30,7 +30,7 @@ export const login = createAsyncThunk<IAuthResponse, IPhoneTypePassword>(
 	'/auth/login',
 	async ({ type, phone, password }, thunkApi) => {
 		try {
-			const response = await AuthService.login(type, phone, password);
+			const response = await AuthService.login(type, password, phone);
 			toastr.success('Вход', 'Успешный вход');
 			return response.data;
 		} catch (error) {

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Field from '@/components/ui/form-elements/Field';
+import { formatPhone } from '@/shared/regex';
 
 import dynamic from 'next/dynamic';
 import { FC } from 'react';
@@ -10,6 +11,7 @@ interface IRegistrationField {
 	formState: FormState<any>;
 	isPasswordRequired?: boolean;
 	control: any;
+	setValue: any;
 }
 
 const CustomSelect = dynamic(
@@ -30,6 +32,7 @@ const RegistrationWorkerField: FC<IRegistrationField> = ({
 	formState: { errors },
 	isPasswordRequired = false,
 	control,
+	setValue,
 }) => {
 	const options = [
 		{ value: 'male', label: 'Мужской' },
@@ -77,26 +80,27 @@ const RegistrationWorkerField: FC<IRegistrationField> = ({
 				error={errors.middleName}
 			/>
 			<Field
-				type='tel'
 				{...register('phone', {
 					required: 'Введите номер телефона',
-
-					// pattern: {
-					// 	value: validPhone,
-					// 	message: 'Please enter a valid phone',
-					// },
 				})}
+				type='tel'
 				placeholder='Номер телефона:'
+				onChange={e => {
+					setValue('phone', formatPhone(e.target.value));
+				}}
 				error={errors.phone}
 			/>
 			<Field
 				{...register('age', {
 					required: 'Введите возраст',
-					// pattern: {
-					// 	value: validPhone,
-					// 	message: 'Please enter a valid phone',
-					// },
+					valueAsNumber: true,
+					validate: value => {
+						if (value < 18) return 'Минимальный возраст: 18';
+						if (value > 100) return 'Максимальный возраст: 100';
+						return true;
+					},
 				})}
+				type='number'
 				placeholder='Возраст:'
 				error={errors.age}
 			/>
@@ -164,13 +168,16 @@ const RegistrationWorkerField: FC<IRegistrationField> = ({
 			<Field
 				{...register('workTime', {
 					required: 'Введите количество дней',
-					// pattern: {
-					// 	value: validPhone,
-					// 	message: 'Please enter a valid phone',
-					// },
+					valueAsNumber: true,
+					validate: value => {
+						if (value < 1) return 'Минимально 1 день';
+						if (value > 7) return 'Максимально 7 дней';
+						return true;
+					},
 				})}
+				type='number'
 				placeholder='Сколько готовы работать дней в неделю:'
-				error={errors.lastWorkPlace}
+				error={errors.workTime}
 			/>
 
 			<Field

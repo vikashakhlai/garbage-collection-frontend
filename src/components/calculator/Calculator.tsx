@@ -18,7 +18,12 @@ export const Calculator: React.FC<Props> = ({ className }) => {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const [summary, setSummary] = useState(0);
 
-	const { register: registerInput, formState } = useForm<ICalculateInput>({
+	const {
+		register: registerInput,
+		formState,
+		watch,
+		setValue,
+	} = useForm<ICalculateInput>({
 		mode: 'onChange',
 	});
 
@@ -30,7 +35,12 @@ export const Calculator: React.FC<Props> = ({ className }) => {
 			<MainHeader text='Расчет стоимости вывоза мусора' />
 			<form className={styles.calculatorForm}>
 				<h3 className={styles.calculatorFormHeader}>Основные параметры:</h3>
-				<CalculatorField formState={formState} register={registerInput} />
+				<CalculatorField
+					setValue={setValue}
+					watch={watch}
+					formState={formState}
+					register={registerInput}
+				/>
 				<h3 className={cn(styles.calculatorFormCountHeader)}>Итого:</h3>
 				<span className={cn(styles.calculatorFormCountText, 'text-left block')}>
 					{summary} BYN

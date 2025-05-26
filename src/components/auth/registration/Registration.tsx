@@ -29,6 +29,7 @@ export const Registration: React.FC<Props> = ({}) => {
 		formState,
 		reset,
 		control,
+		setValue,
 	} = useForm<IRegisterInput>({
 		mode: 'onChange',
 	});
@@ -53,6 +54,7 @@ export const Registration: React.FC<Props> = ({}) => {
 					<RegistrationChangeButton setType={setType} type={type} />
 					{type === 'client' && (
 						<RegistrationClientField
+							setValue={setValue}
 							formState={formState}
 							register={registerInput}
 							control={control}
@@ -61,6 +63,7 @@ export const Registration: React.FC<Props> = ({}) => {
 					)}
 					{type === 'worker' && (
 						<RegistrationWorkerField
+							setValue={setValue}
 							control={control}
 							formState={formState}
 							register={registerInput}

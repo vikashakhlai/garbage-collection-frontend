@@ -1,5 +1,21 @@
 .serviceListContainer {
 	display: flex;
-	gap: 32px;
+	gap: 16px;
 	flex-wrap: wrap;
+
+	@media (min-width: 576px) {
+		gap: 20px;
+	}
+
+	@media (min-width: 768px) {
+		gap: 24px;
+	}
+
+	@media (min-width: 992px) {
+		gap: 28px;
+	}
+
+	@media (min-width: 1200px) {
+		gap: 32px;
+	}
 }

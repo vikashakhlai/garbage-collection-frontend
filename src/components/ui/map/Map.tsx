@@ -17,14 +17,12 @@ const LeafletMap = ({
 	const mapContainerRef: any = useRef<HTMLDivElement>(null);
 	const [isMounted, setIsMounted] = useState(false);
 
-	// Иконки маркеров
 	const iconUrls = {
 		icon: '/images/leaflet/marker-icon.png',
 		iconRetina: '/images/leaflet/marker-icon-2x.png',
 		shadow: '/images/leaflet/marker-shadow.png',
 	};
 
-	// Координаты центра Минска
 	const MINSK_CENTER: [number, number] = [53.902284, 27.561831];
 	const DEFAULT_ZOOM = 12;
 
@@ -48,7 +46,6 @@ const LeafletMap = ({
 
 				if (mapRef.current) return;
 
-				// Инициализация карты с центром в Минске
 				const mapInstance = L.map(mapContainerRef.current).setView(
 					MINSK_CENTER,
 					DEFAULT_ZOOM
@@ -59,7 +56,6 @@ const LeafletMap = ({
 						'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 				}).addTo(mapInstance);
 
-				// Создаем иконку для будущих маркеров
 				const customIcon = new L.Icon({
 					iconUrl: iconUrls.icon,
 					iconRetinaUrl: iconUrls.iconRetina,
@@ -70,26 +66,21 @@ const LeafletMap = ({
 					shadowSize: [41, 41],
 				});
 
-				// Обработчик клика по карте
 				mapInstance.on('click', (e: any) => {
-					// Удаляем предыдущий маркер
 					if (markerRef.current) {
 						markerRef.current.remove();
 					}
 
-					// Создаем новый маркер
 					const markerInstance = L.marker([e.latlng.lat, e.latlng.lng], {
 						icon: customIcon,
 						draggable: true,
 					}).addTo(mapInstance);
 
-					// Обработчик перемещения маркера
 					markerInstance.on('dragend', (dragEvent: any) => {
 						const position = dragEvent.target.getLatLng();
 						geocodePosition(position.lat, position.lng);
 					});
 
-					// Геокодирование позиции
 					geocodePosition(e.latlng.lat, e.latlng.lng);
 					markerRef.current = markerInstance;
 				});
