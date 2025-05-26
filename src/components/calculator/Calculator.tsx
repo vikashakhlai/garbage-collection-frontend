@@ -2,8 +2,9 @@
 
 import cn from 'classnames';
 
+import { checkSummary } from '@/utils/checkSummary';
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { CalculatorButton } from '../ui/calculator-button/CalculatorButton';
 import { MainHeader } from '../ui/main-header/MainHeader';
 import { ICalculateInput } from './calculator.interface';
@@ -18,11 +19,17 @@ export const Calculator: React.FC<Props> = ({ className }) => {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const [summary, setSummary] = useState(0);
 
+	const onSubmit: SubmitHandler<ICalculateInput> = data => {
+		alert(JSON.stringify(data));
+		setSummary(checkSummary(data));
+	};
+
 	const {
 		register: registerInput,
 		formState,
 		watch,
 		setValue,
+		handleSubmit,
 	} = useForm<ICalculateInput>({
 		mode: 'onChange',
 	});
@@ -33,7 +40,7 @@ export const Calculator: React.FC<Props> = ({ className }) => {
 			id='calculator'
 		>
 			<MainHeader text='Расчет стоимости вывоза мусора' />
-			<form className={styles.calculatorForm}>
+			<form className={styles.calculatorForm} onSubmit={handleSubmit(onSubmit)}>
 				<h3 className={styles.calculatorFormHeader}>Основные параметры:</h3>
 				<CalculatorField
 					setValue={setValue}

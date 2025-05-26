@@ -1,4 +1,10 @@
 export interface ICalculateInput {
-	phone: string;
-	password: string;
+	dimensions: string;
+	weight: number;
+	hour: number;
+	floor: number;
+	forCity: boolean;
+	distance: number;
+	cargo: boolean;
+	furniture: boolean;
 }

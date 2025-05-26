@@ -34,6 +34,7 @@ const CalculatorField: FC<ICalculatorField> = ({
 				{...register('weight', {
 					required: 'Введите массу груза (кг)',
 				})}
+				type='number'
 				placeholder='Масса груза:'
 				error={errors.weight}
 			/>
@@ -89,6 +90,7 @@ const CalculatorField: FC<ICalculatorField> = ({
 					required: 'Введите количество этажей',
 				})}
 				placeholder='Этажей без лифта:'
+				type='number'
 				error={errors.floor}
 			/>
 			<div className='flex gap-1'>
