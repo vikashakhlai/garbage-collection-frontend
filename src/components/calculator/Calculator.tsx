@@ -20,7 +20,6 @@ export const Calculator: React.FC<Props> = ({ className }) => {
 	const [summary, setSummary] = useState(0);
 
 	const onSubmit: SubmitHandler<ICalculateInput> = data => {
-		alert(JSON.stringify(data));
 		setSummary(checkSummary(data));
 	};
 
