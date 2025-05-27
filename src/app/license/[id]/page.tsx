@@ -7,7 +7,9 @@ import { useParams } from 'next/navigation';
 export default function LicensePage() {
 	const params = useParams();
 	const id = params.id;
-	console.log(id);
+
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	// @ts-ignore
 	const { data } = useUserById(id);
 
 	return <License data={data ? data : null} />;
