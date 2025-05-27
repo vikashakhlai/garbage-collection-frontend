@@ -29,6 +29,7 @@ export const Calculator: React.FC<Props> = ({ className }) => {
 		watch,
 		setValue,
 		handleSubmit,
+		control,
 	} = useForm<ICalculateInput>({
 		mode: 'onChange',
 	});
@@ -42,6 +43,7 @@ export const Calculator: React.FC<Props> = ({ className }) => {
 			<form className={styles.calculatorForm} onSubmit={handleSubmit(onSubmit)}>
 				<h3 className={styles.calculatorFormHeader}>Основные параметры:</h3>
 				<CalculatorField
+					control={control}
 					setValue={setValue}
 					watch={watch}
 					formState={formState}

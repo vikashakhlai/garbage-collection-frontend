@@ -51,7 +51,7 @@ export const UserTableItem: React.FC<Props> = ({ className, data }) => {
 			)}
 			{data.licenseImage ? (
 				<td>
-					<Link href={data.licenseImage} className={styles.link}>
+					<Link href={`/license/${data.id}`} className={styles.link}>
 						Права
 					</Link>
 				</td>

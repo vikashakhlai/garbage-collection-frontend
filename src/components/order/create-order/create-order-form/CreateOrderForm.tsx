@@ -37,9 +37,11 @@ export const CreateOrderForm: React.FC<Props> = ({ className }) => {
 			floor: Number(data.floor),
 			distance: Number(data.distance),
 			date: new Date(data.date),
+			time: `${data.time.getHours()}:${data.time.getMinutes()}`,
 			servicesIds: [Number(data.service)],
 			totalPrice: 123,
 		};
+
 		delete res.service;
 
 		createAsync(res);

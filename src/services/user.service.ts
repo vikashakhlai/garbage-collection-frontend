@@ -7,6 +7,9 @@ export const UserService = {
 	async getAllUsers() {
 		return axios.get<IUser[]>(getUsersUrl(''), {});
 	},
+	async getUserById(userId: number) {
+		return axios.get<IUser>(getUsersUrl(`${userId}`));
+	},
 	async getUserProfile() {
 		return axios.get<IUser>(getUsersUrl('profile'));
 	},

@@ -1,7 +1,7 @@
 export interface ICreateOrderInput {
 	phone: string;
 	date: Date;
-	time: string;
+	time: Date;
 	address: string;
 	distance: number;
 	floor: number;

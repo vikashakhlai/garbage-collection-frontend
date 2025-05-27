@@ -10,6 +10,8 @@ import LeafletMap from '@/components/ui/map/Map';
 import { formatPhone } from '@/shared/regex';
 import { IService } from '@/types/service.type';
 import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import { Controller, FormState, UseFormRegister } from 'react-hook-form';
 import styles from './CreateOrderFormField.module.scss';
 
@@ -75,20 +77,80 @@ export const CreateOrderFormField: React.FC<ICreateOrderField> = ({
 				error={errors.phone}
 			/>
 
-			<Field
+			{/* <Field
 				{...register('date', {
 					required: 'Введите дату',
 				})}
 				placeholder='Дата:'
+				type='date'
 				error={errors.date}
+			/> */}
+
+			<Controller
+				control={control}
+				name='date'
+				rules={{ required: 'Дата обязательна' }}
+				render={({ field, fieldState: { error } }) => (
+					<div className='text-left'>
+						<label className={styles.fieldText}>Введите дату:</label>
+						<DatePicker
+							selected={field.value}
+							onChange={date => field.onChange(date)}
+							dayClassName={date =>
+								date.getDate() === field.value?.getDate()
+									? '!bg-green-500 !text-white rounded-full'
+									: 'hover:bg-green-100'
+							}
+							calendarClassName='border-2 border-green-200'
+							showPopperArrow={false}
+							className={styles.fieldInput}
+							dateFormat='dd.MM.yyyy'
+							showYearDropdown
+							dropdownMode='select'
+							// className={`border rounded p-2 w-full ${
+							// 	error ? 'border-red-500' : 'border-gray-300'
+							// }`}
+						/>
+						{error && (
+							<p className='text-red-500 text-sm mt-1'>{error.message}</p>
+						)}
+					</div>
+				)}
 			/>
-			<Field
+
+			<Controller
+				name='time'
+				control={control}
+				rules={{ required: 'Пожалуйста, укажите время' }}
+				render={({ field, fieldState: { error } }) => (
+					<div className='datepicker-wrapper text-left'>
+						<label className={styles.fieldText}>Введите время:</label>
+						<DatePicker
+							{...field}
+							selected={field.value}
+							onChange={date => field.onChange(date)}
+							showTimeSelect
+							showTimeSelectOnly
+							timeIntervals={15}
+							dateFormat='HH:mm'
+							timeFormat='HH:mm'
+							className={`custom-time-input ${error ? 'error' : ''}`}
+							placeholderText='Выберите время'
+						/>
+						{error && <span className='error-message'>{error.message}</span>}
+					</div>
+				)}
+			/>
+
+			{/* <Field
 				{...register('time', {
 					required: 'Введите время',
 				})}
 				placeholder='Время заказа:'
+				type='time'
 				error={errors.time}
-			/>
+			/> */}
+
 			{/* <Field
 				{...register('address', {
 					required: 'Введите адрес',
@@ -131,7 +193,7 @@ export const CreateOrderFormField: React.FC<ICreateOrderField> = ({
 				</label>
 				<textarea
 					{...register('comment', {
-						required: 'Укажите комментарий к заказу',
+						// required: 'Укажите комментарий к заказу',
 					})}
 					className={styles.commentField}
 				/>

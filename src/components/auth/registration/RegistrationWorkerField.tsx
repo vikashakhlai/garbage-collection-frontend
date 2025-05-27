@@ -12,6 +12,7 @@ interface IRegistrationField {
 	isPasswordRequired?: boolean;
 	control: any;
 	setValue: any;
+	watch: any;
 }
 
 const CustomSelect = dynamic(
@@ -33,6 +34,7 @@ const RegistrationWorkerField: FC<IRegistrationField> = ({
 	isPasswordRequired = false,
 	control,
 	setValue,
+	watch,
 }) => {
 	const options = [
 		{ value: 'male', label: 'Мужской' },
@@ -179,14 +181,29 @@ const RegistrationWorkerField: FC<IRegistrationField> = ({
 				placeholder='Сколько готовы работать дней в неделю:'
 				error={errors.workTime}
 			/>
+			{watch('workerType') === 'driver' && (
+				<>
+					<Field
+						placeholder='Максимальные габариты:'
+						{...register('dimensions', {
+							required: 'Введите максимальные габариты',
+						})}
+						type='range'
+						min='0.4'
+						max='8.2'
+						step='0.3'
+						onChange={e => {
+							const value = e.target.value;
+							setValue('dimensions', value);
+						}}
+					/>
+					<div className='flex gap-1 font-bold'>{watch('dimensions')} м.</div>
+				</>
+			)}
 
 			<Field
 				{...register('checkProcessing', {
 					required: 'Данный пункт обязателен!',
-					// pattern: {
-					// 	value: validPhone,
-					// 	message: 'Please enter a valid phone',
-					// },
 				})}
 				placeholder='Я согласен(на) на обработку Персональных данных.'
 				type='checkbox'
@@ -195,10 +212,6 @@ const RegistrationWorkerField: FC<IRegistrationField> = ({
 			<Field
 				{...register('checkConditions', {
 					required: 'Данный пункт обязателен!',
-					// pattern: {
-					// 	value: validPhone,
-					// 	message: 'Please enter a valid phone',
-					// },
 				})}
 				placeholder='Я принимаю условия договора оферты.'
 				type='checkbox'

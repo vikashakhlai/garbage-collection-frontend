@@ -30,6 +30,7 @@ export const Registration: React.FC<Props> = ({}) => {
 		reset,
 		control,
 		setValue,
+		watch,
 	} = useForm<IRegisterInput>({
 		mode: 'onChange',
 	});
@@ -63,6 +64,7 @@ export const Registration: React.FC<Props> = ({}) => {
 					)}
 					{type === 'worker' && (
 						<RegistrationWorkerField
+							watch={watch}
 							setValue={setValue}
 							control={control}
 							formState={formState}
