@@ -30,11 +30,13 @@ export interface IDataRegister {
 	middleName: string;
 	phone: string;
 	gender: string;
+	age: number;
 	password: string;
 	type: string;
 	workerType?: string;
 	lastWork?: string;
 	workTime?: number;
+	dimensions?: number;
 }
 
 export interface IAuthResponse extends ITokens {

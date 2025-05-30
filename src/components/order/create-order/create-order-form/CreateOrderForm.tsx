@@ -34,8 +34,11 @@ export const CreateOrderForm: React.FC<Props> = ({ className }) => {
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		const res: any = {
 			...data,
-			floor: Number(data.floor),
-			distance: Number(data.distance),
+			weight: Number(data.weight),
+			dimensions: Number(data.dimensions),
+			hour: Number(data.hour),
+			floor: data.floor ? Number(data.floor) : null,
+			distance: data.distance ? Number(data.distance) : null,
 			date: new Date(data.date),
 			time: `${data.time.getHours()}:${data.time.getMinutes()}`,
 			servicesIds: [Number(data.service)],

@@ -1,7 +1,7 @@
 import { IOrder } from '@/types/order.types';
 import { convertPostgreDate } from '@/utils/date/ConvertPostgreDate';
 import cn from 'classnames';
-import { CheckCircle2, Hourglass, XCircle } from 'lucide-react';
+import { CheckCircle2, Clock11, Hourglass, XCircle } from 'lucide-react';
 import React from 'react';
 import styles from './ProfileHistoryTableItem.module.scss';
 
@@ -24,22 +24,28 @@ export const ProfileHistoryTableItem: React.FC<Props> = ({
 			<td className={styles.orderTableItemAddress}>{data.address}</td>
 			<td>{data.totalPrice}</td>
 			<td>{data.comment}</td>
-			{data.isCompleted === true && (
+			{data.status === 'completed' && (
 				<td className='flex justify-center items-center gap-1'>
-					<span>Обработан</span>
+					<span>Выполнен</span>
 					<CheckCircle2 color='#4CAF50' />
 				</td>
 			)}
-			{data.isCompleted === false && (
-				<td className='flex justify-center items-center gap-1'>
-					<span>Отменен</span>
-					<XCircle color='red' />
-				</td>
-			)}
-			{data.isCompleted === null && (
+			{data.status === 'pending' && (
 				<td className='flex justify-center items-center gap-1'>
 					<span>Ожидание</span>
 					<Hourglass color='#666666' />
+				</td>
+			)}
+			{data.status === 'processed' && (
+				<td className='flex justify-center items-center gap-1'>
+					<span>Обработан</span>
+					<Clock11 color='brown' />
+				</td>
+			)}
+			{data.status === 'rejected' && (
+				<td className='flex justify-center items-center gap-1'>
+					<span>Отменен</span>
+					<XCircle color='red' />
 				</td>
 			)}
 		</tr>

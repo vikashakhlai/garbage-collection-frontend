@@ -36,8 +36,14 @@ export const Registration: React.FC<Props> = ({}) => {
 	});
 
 	const onSubmit: SubmitHandler<IRegisterInput> = data => {
-		if (data.workTime) {
-			registration({ ...data, type: type, workTime: +data.workTime });
+		if (data.workTime && data.dimensions) {
+			registration({
+				...data,
+				type: type,
+				age: +data.age,
+				workTime: +data.workTime,
+				dimensions: +data.dimensions,
+			});
 		} else {
 			registration({ ...data, type: type });
 		}

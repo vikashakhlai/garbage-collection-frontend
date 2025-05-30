@@ -3,8 +3,15 @@ export interface ICreateOrderInput {
 	date: Date;
 	time: Date;
 	address: string;
-	distance: number;
-	floor: number;
-	comment: string;
+	flat?: string;
+	entrance?: string;
+	distance?: number;
+	hour: number;
+	floor?: number;
+	comment?: string;
 	service: number;
+	weight: number;
+	dimensions: number;
+	isHeavy?: boolean;
+	isDisassembly?: boolean;
 }

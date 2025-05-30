@@ -67,3 +67,36 @@
 	color: #333333;
 	text-align: left;
 }
+
+.checkInputText {
+	font-family: var(--font-montserrat), sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+	display: flex;
+	gap: 4px;
+	align-items: center;
+	justify-content: center;
+	margin: auto 0;
+
+	@media (min-width: 576px) {
+		font-size: 14px;
+	}
+
+	@media (min-width: 768px) {
+		font-size: 16px;
+	}
+
+	@media (min-width: 992px) {
+		font-size: 18px;
+	}
+
+	@media (min-width: 1200px) {
+		font-size: 20px;
+	}
+}
+
+.checkInputSecondText {
+	font-size: 12px;
+	line-height: 1;
+	color: #666666;
+}

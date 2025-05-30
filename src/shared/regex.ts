@@ -27,3 +27,35 @@ export const formatPhone = (input: string) => {
 
 	return formatted;
 };
+
+export const isValidDateFormat = dateString => {
+	const regex = /^\d{2}\.\d{2}\.\d{4}$/;
+	return regex.test(dateString);
+};
+
+export const parseCustomDate = dateString => {
+	if (!isValidDateFormat(dateString)) return null;
+
+	const [day, month, year] = dateString.split('.').map(Number);
+
+	if (month < 1 || month > 12 || day < 1 || day > 31) return null;
+
+	const date = new Date(year, month - 1, day);
+
+	const isValidDate =
+		date.getDate() === day &&
+		date.getMonth() === month - 1 &&
+		date.getFullYear() === year;
+
+	return isValidDate ? date : null;
+};
+
+export const formatDateToCustomString = date => {
+	if (!(date instanceof Date) || isNaN(date)) return '';
+
+	const day = String(date.getDate()).padStart(2, '0');
+	const month = String(date.getMonth() + 1).padStart(2, '0');
+	const year = date.getFullYear();
+
+	return `${day}.${month}.${year}`;
+};

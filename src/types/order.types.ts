@@ -4,7 +4,7 @@ export interface IOrder {
 	id: number;
 	createdAt?: Date;
 	updatedAt?: Date;
-	isCompleted: boolean | null;
+	status: 'pending' | 'rejected' | 'processed' | 'completed';
 	totalPrice: number;
 	phone: string;
 	date: Date;

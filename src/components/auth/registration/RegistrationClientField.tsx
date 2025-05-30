@@ -87,6 +87,20 @@ const RegistrationClientField: FC<IRegistrationField> = ({
 				}}
 				error={errors.phone}
 			/>
+			<Field
+				{...register('age', {
+					required: 'Введите возраст',
+					valueAsNumber: true,
+					validate: value => {
+						if (value < 18) return 'Минимальный возраст: 18';
+						if (value > 100) return 'Максимальный возраст: 100';
+						return true;
+					},
+				})}
+				type='number'
+				placeholder='Возраст:'
+				error={errors.age}
+			/>
 			<Controller
 				control={control}
 				name='gender'

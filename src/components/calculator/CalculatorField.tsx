@@ -99,9 +99,9 @@ const CalculatorField: FC<ICalculatorField> = ({
 			)}
 
 			<Field
-				placeholder='Фрахт (часы работы):'
+				placeholder='Часы работы:'
 				{...register('hour', {
-					required: 'Введите фрахт',
+					required: 'Введите часы',
 					validate: value => {
 						const num = Number(value);
 						return num % 2 === 0 || 'Число должно быть кратным 2';
@@ -175,7 +175,7 @@ const CalculatorField: FC<ICalculatorField> = ({
 							setValue('floor', '');
 						}}
 					/>
-					<span>Работа в квартире</span>
+					<span>Не работает лифт</span>
 				</label>
 			</div>
 

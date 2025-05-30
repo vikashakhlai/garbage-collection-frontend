@@ -156,7 +156,7 @@ const RegistrationWorkerField: FC<IRegistrationField> = ({
 				error={errors.registrationPassword}
 			/>
 			<Field
-				{...register('lastWorkPlace', {
+				{...register('lastWork', {
 					required: 'Введите место работы',
 					// pattern: {
 					// 	value: validPhone,
@@ -164,7 +164,7 @@ const RegistrationWorkerField: FC<IRegistrationField> = ({
 					// },
 				})}
 				placeholder='Предыдущее место работы:'
-				error={errors.lastWorkPlace}
+				error={errors.lastWork}
 			/>
 
 			<Field
