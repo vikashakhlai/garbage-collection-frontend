@@ -1,5 +1,22 @@
 .cancelOrderContainer {
 	margin-bottom: 60px;
+	padding: 0 4px;
+
+	@media (min-width: 576px) {
+		padding: 0 8px;
+	}
+
+	@media (min-width: 768px) {
+		padding: 0 4px;
+	}
+
+	@media (min-width: 1200px) {
+		padding: 0;
+	}
+
+	// @media (min-width: 1200px) {
+	// 	font-size: 14px;
+	// }
 
 	.cancelOrderHeader {
 		font-family: var(--font-montserrat), sans-serif;

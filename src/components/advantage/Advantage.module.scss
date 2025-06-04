@@ -6,6 +6,22 @@
 	position: relative;
 	margin: 0 auto;
 	margin-bottom: 60px;
+
+	@media (min-width: 576px) {
+		font-size: 42px;
+	}
+
+	@media (min-width: 768px) {
+		font-size: 42px;
+	}
+
+	@media (min-width: 992px) {
+		font-size: 42px;
+	}
+
+	@media (min-width: 1200px) {
+		font-size: 42px;
+	}
 }
 
 .advantageList {
@@ -14,9 +30,16 @@
 	justify-content: center;
 	margin-bottom: 60px;
 	flex-direction: column;
+	align-items: center;
 
 	@media (min-width: 768px) {
 		flex-direction: row;
+	}
+
+	@media (min-width: 768px) {
+	}
+
+	@media (min-width: 1200px) {
 	}
 }
 

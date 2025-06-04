@@ -1,3 +1,12 @@
 .accordionContainer {
 	margin-top: 30px;
+	padding: 0 4px;
+
+	@media (min-width: 768px) {
+		padding: 0 8px;
+	}
+
+	@media (min-width: 1120px) {
+		padding: 0;
+	}
 }

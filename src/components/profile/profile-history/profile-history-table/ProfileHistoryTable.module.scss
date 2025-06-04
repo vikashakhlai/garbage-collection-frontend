@@ -68,8 +68,15 @@
 	justify-content: center;
 	// padding-bottom: 8px;
 	width: 100%;
-	min-width: 600px;
-	// margin-top: 4px;
+	min-width: 280px;
+
+	@media (min-width: 576px) {
+		min-width: 420px;
+	}
+
+	@media (min-width: 768px) {
+		min-width: 600px;
+	}
 }
 
 // .line {

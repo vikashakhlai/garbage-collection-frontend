@@ -15,24 +15,6 @@ export const ServiceList: React.FC<Props> = ({}) => {
 	return (
 		<ul className={styles.serviceListContainer}>
 			{data ? data.map(el => <ServiceListItem key={el.id} data={el} />) : <></>}
-			{/* <ServiceListItem
-				text='Вывозим кирпич, бетон, отходы ремонта. Работаем с объемами 
-от 1 м³. '
-				headerText='Строительный мусор'
-				imageUrl='/images/trash.png'
-			/>
-			<ServiceListItem
-				text='Вывозим кирпич, бетон, отходы ремонта. Работаем с объемами 
-от 1 м³. '
-				headerText='Строительный мусор'
-				imageUrl='/images/trash.png'
-			/>
-			<ServiceListItem
-				text='Вывозим кирпич, бетон, отходы ремонта. Работаем с объемами 
-от 1 м³. '
-				headerText='Строительный мусор'
-				imageUrl='/images/trash.png'
-			/> */}
 		</ul>
 	);
 };

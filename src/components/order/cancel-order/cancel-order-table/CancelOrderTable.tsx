@@ -59,6 +59,20 @@ export const CancelOrderTable: React.FC<Props> = ({
 		<>
 			<table className={cn(className, styles.cancelOrderTable)}>
 				<tbody className='flex flex-col gap-1'>
+					{activeOrders.data?.length ? (
+						<tr className={styles.confirmTableHeader}>
+							<td className={styles.confirmTableHeaderItem}>Дата/Время</td>
+							<td className={styles.confirmTableHeaderItem}>Сервис</td>
+							<td className={styles.orderTableItemAddress}>Адрес</td>
+							<td className={styles.confirmTableHeaderItem}>Цена</td>
+							<td className={styles.confirmTableHeaderItem}>Коммент</td>
+							<td className={styles.confirmTableHeaderItem}>Статус</td>
+						</tr>
+					) : (
+						<tr>
+							<td>нет данных</td>
+						</tr>
+					)}
 					{activeOrders.data ? (
 						activeOrders.data
 							.slice(

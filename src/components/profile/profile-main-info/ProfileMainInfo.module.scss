@@ -1,13 +1,45 @@
 .profileMainContainer {
 	padding: 16px 16px 30px 16px;
-	min-width: 380px;
-	height: 720px;
+	min-width: 280px;
+	height: 680px;
 	box-shadow: 0 4px 16px #00000038;
 	background-color: #fff;
 	border-radius: 16px;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
+	max-width: 320px;
+	margin: 0 auto;
+
+	@media (min-width: 420px) {
+		padding: 16px 16px 30px 16px;
+		min-width: 320px;
+		max-width: 380px;
+	}
+
+	@media (min-width: 576px) {
+		padding: 16px 16px 30px 16px;
+		min-width: 340px;
+		max-width: 420px;
+	}
+
+	@media (min-width: 768px) {
+		padding: 16px 16px 30px 16px;
+		min-width: 480px;
+		height: 700px;
+	}
+
+	@media (min-width: 992px) {
+		padding: 8px 8px 15px 8px;
+		min-width: 320px;
+		height: 720px;
+		// margin: 0;
+	}
+
+	@media (min-width: 1200px) {
+		padding: 16px 16px 30px 16px;
+		min-width: 380px;
+	}
 
 	.profileMainImageContainer {
 		height: 280px;
@@ -28,15 +60,31 @@
 		font-family: var(--font-montserrat), sans-serif;
 		color: #333333;
 		font-weight: 700;
-		font-size: 18px;
+		font-size: 14px;
 		margin-top: 16px;
+
+		@media (min-width: 768px) {
+			font-size: 16px;
+		}
+
+		@media (min-width: 1200px) {
+			font-size: 18px;
+		}
 	}
 
 	.profileMainUserType {
 		font-family: var(--font-montserrat), sans-serif;
 		color: #666666;
 		font-weight: 600;
-		font-size: 16px;
+		font-size: 12px;
+
+		@media (min-width: 768px) {
+			font-size: 14px;
+		}
+
+		@media (min-width: 1200px) {
+			font-size: 16px;
+		}
 	}
 
 	.profileMainLine {
@@ -59,16 +107,32 @@
 
 		.profileMainListItemHeader {
 			font-family: var(--font-montserrat), sans-serif;
-			font-size: 16px;
+			font-size: 12px;
 			color: #333333;
 			font-weight: 600;
+
+			@media (min-width: 768px) {
+				font-size: 14px;
+			}
+
+			@media (min-width: 1200px) {
+				font-size: 16px;
+			}
 		}
 
 		.profileMainListItemText {
 			font-family: var(--font-openSans), sans-serif;
-			font-size: 16px;
+			font-size: 12px;
 			color: #666666;
 			font-weight: 600;
+
+			@media (min-width: 768px) {
+				font-size: 14px;
+			}
+
+			@media (min-width: 1200px) {
+				font-size: 16px;
+			}
 		}
 	}
 }

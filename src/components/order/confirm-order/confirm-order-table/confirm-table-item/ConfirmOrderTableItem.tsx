@@ -28,14 +28,17 @@ export const ConfirmOrderTableItem: React.FC<Props> = ({ className, data }) => {
 
 	return (
 		<tr className={cn(className, styles.cancelOrderTableItemContainer)}>
-			<td className='flex flex-col justify-center items-center'>
+			<td className='flex flex-col justify-center items-start'>
 				<span>{convertPostgreDate(data.date)}</span>
 				<span className={styles.cancelOrderTableItemTime}>{data.time}</span>
 			</td>
 			<td>{data.services && data?.services[0].service.name}</td>
 			<td className={styles.orderTableItemAddress}>{data.address}</td>
-			<td>{data.totalPrice}</td>
-			<td>{data.comment}</td>
+			<td>{data.totalPrice ? `${data.totalPrice} руб.` : '0 руб.'}</td>
+			<td>{data.distance ? `${data.distance} км.` : '0 км.'}</td>
+			<td>{data.dimensions ? `${data.dimensions} м.` : '0 м.'}</td>
+			<td>{data.weight ? `${data.weight} кг.` : '0 кг.'}</td>
+			<td>{data.comment ? data.comment : '-'}</td>
 			{data?.services &&
 				data?.services[0].service.workerType == user?.workerType && (
 					<td className='flex flex-col items-center justify-center'>

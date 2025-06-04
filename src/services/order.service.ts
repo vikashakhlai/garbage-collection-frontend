@@ -6,6 +6,9 @@ export const OrderService = {
 	async getOrders() {
 		return axios.get<IOrder[]>(getOrdersUrl(''));
 	},
+	async getWorkerProcessedOrders() {
+		return axios.get<IOrder[]>(getOrdersUrl('worker/process'));
+	},
 	async getActiveOrders() {
 		return axios.get<IOrder[]>(getOrdersUrl('active'));
 	},
@@ -22,6 +25,12 @@ export const OrderService = {
 
 	async createOrder(data: ICreateOrder) {
 		return axios.post(getOrdersUrl(''), data);
+	},
+	async completeOrder(orderId: number) {
+		return axios.patch(getOrdersUrl(`complete-order/${orderId}`));
+	},
+	async pendingOrder(orderId: number) {
+		return axios.patch(getOrdersUrl(`pending/${orderId}`));
 	},
 	async confirmOrder(orderId: number) {
 		return axios.patch(getOrdersUrl(`confirm-order/${orderId}`));

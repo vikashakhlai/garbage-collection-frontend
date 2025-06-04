@@ -16,15 +16,29 @@
 		text-align: center;
 		margin: 0 auto;
 		font-family: var(--font-openSans), sans-serif;
-		font-size: 20px;
+		font-size: 14px;
 		font-weight: 700;
+
+		@media (min-width: 768px) {
+			font-size: 16px;
+		}
+
+		@media (min-width: 992px) {
+			font-size: 18px;
+		}
+
+		@media (min-width: 1200px) {
+			font-size: 20px;
+		}
 	}
 
 	.faqTextLink {
 		transition: all 0.4s ease-in-out;
+		text-decoration: underline;
+		color: #333333;
 
 		&:hover {
-			color: #333333;
+			color: #4caf50;
 		}
 	}
 }

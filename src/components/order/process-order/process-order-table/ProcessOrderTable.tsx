@@ -1,36 +1,24 @@
 'use client';
 
-import { useOrders } from '@/hooks/order/useOrders';
-import { useAuth } from '@/hooks/useAuth';
-import { IOrder } from '@/types/order.types';
+import { useWorkerProcessedOrders } from '@/hooks/order/useWorkerProcessedOrders';
 import cn from 'classnames';
 import { useState } from 'react';
-import styles from './ConfirmOrderTable.module.scss';
-import { ConfirmOrderTableItem } from './confirm-table-item/ConfirmOrderTableItem';
+import styles from './ProcessOrderTable.module.scss';
+import { ProcessOrderTableItem } from './process-order-table-item/ProcessOrderTableItem';
 
 interface Props {
 	className?: string;
 	itemsPerPage: number;
 }
 
-export const ConfirmOrderTable: React.FC<Props> = ({
+export const ProcessOrderTable: React.FC<Props> = ({
 	className,
 	itemsPerPage,
 }) => {
-	const { activeOrders } = useOrders();
-	const { user } = useAuth();
-
-	const orders: IOrder[] =
-		user.workerType &&
-		activeOrders.data?.filter(
-			// eslint-disable-next-line @typescript-eslint/no-explicit-any
-			(el: any) => el.services[0].service.workerType === user.workerType
-		);
+	const { data } = useWorkerProcessedOrders();
 
 	const [currentPage, setCurrentPage] = useState(1);
-	const totalPages = activeOrders.data
-		? Math.ceil(activeOrders.data.length / itemsPerPage)
-		: 1;
+	const totalPages = data ? Math.ceil(data.length / itemsPerPage) : 1;
 
 	const getPages = () => {
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -69,25 +57,29 @@ export const ConfirmOrderTable: React.FC<Props> = ({
 		<>
 			<table className={cn(className, styles.cancelOrderTable)}>
 				<tbody className='flex flex-col gap-1'>
-					<tr className={styles.confirmTableHeader}>
-						<td className={styles.confirmTableHeaderItem}>Дата/Время</td>
-						<td className={styles.confirmTableHeaderItem}>Сервис</td>
-						<td className={styles.orderTableItemAddress}>Адрес</td>
-						<td className={styles.confirmTableHeaderItem}>Цена</td>
-						<td className={styles.confirmTableHeaderItem}>Км.</td>
-						<td className={styles.confirmTableHeaderItem}>Габариты</td>
-						<td className={styles.confirmTableHeaderItem}>Вес</td>
-						<td className={styles.confirmTableHeaderItem}>Коммент</td>
-						<td className={styles.confirmTableHeaderItem}>Действие</td>
-					</tr>
-					{orders ? (
-						orders
+					{data?.length ? (
+						<tr className={styles.confirmTableHeader}>
+							<td className={styles.confirmTableHeaderItem}>Дата/Время</td>
+							<td className={styles.confirmTableHeaderItem}>Сервис</td>
+							<td className={styles.orderTableItemAddress}>Адрес</td>
+							<td className={styles.confirmTableHeaderItem}>Цена</td>
+							<td className={styles.confirmTableHeaderItem}>Коммент</td>
+							<td className={styles.confirmTableHeaderItem}>Отмена</td>
+							<td className={styles.confirmTableHeaderItem}>Завершение</td>
+						</tr>
+					) : (
+						<tr>
+							<td>нет данных</td>
+						</tr>
+					)}
+					{data ? (
+						data
 							.slice(
 								(currentPage - 1) * itemsPerPage,
 								currentPage * itemsPerPage
 							)
 							.map((item, index) => (
-								<ConfirmOrderTableItem key={index} data={item} />
+								<ProcessOrderTableItem key={index} data={item} />
 							))
 					) : (
 						<></>
@@ -120,6 +112,7 @@ export const ConfirmOrderTable: React.FC<Props> = ({
 					</button>
 				))}
 			</div>
+			{/* <div className={styles.line}></div> */}
 		</>
 	);
 };

@@ -4,11 +4,27 @@
 	.reviewHeader {
 		font-family: var(--font-montserrat), sans-serif;
 		font-weight: 700;
-		font-size: 42px;
+		font-size: 32px;
 		text-align: center;
 		position: relative;
 		margin: o auto;
 		margin-bottom: 60px;
+
+		@media (min-width: 576px) {
+			font-size: 36px;
+		}
+
+		@media (min-width: 768px) {
+			font-size: 38px;
+		}
+
+		@media (min-width: 992px) {
+			font-size: 40px;
+		}
+
+		@media (min-width: 1200px) {
+			font-size: 42px;
+		}
 	}
 
 	.reviewList {

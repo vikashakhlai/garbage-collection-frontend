@@ -7,6 +7,7 @@
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+	margin: 0 auto;
 }
 
 .reviewItemPhotoContainer {
@@ -40,8 +41,24 @@
 .line {
 	margin-top: 30px;
 	height: 2px;
-	width: 220px;
+	width: 140px;
 	background-color: #4caf4f4a;
+
+	@media (min-width: 576px) {
+		width: 160px;
+	}
+
+	@media (min-width: 768px) {
+		width: 180px;
+	}
+
+	@media (min-width: 992px) {
+		width: 200px;
+	}
+
+	@media (min-width: 1200px) {
+		width: 220px;
+	}
 }
 
 .reviewItemText {
@@ -49,8 +66,23 @@
 	display: block;
 	max-width: 220px;
 	color: #666666;
-	font-size: 16px;
 	font-weight: 400;
 	font-family: var(--font-openSans), sans-serif;
 	text-align: center;
+
+	@media (min-width: 576px) {
+		font-size: 10px;
+	}
+
+	@media (min-width: 768px) {
+		font-size: 12px;
+	}
+
+	@media (min-width: 992px) {
+		font-size: 14px;
+	}
+
+	@media (min-width: 1200px) {
+		font-size: 16px;
+	}
 }

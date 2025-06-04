@@ -2,7 +2,7 @@ import { ConfirmMobileButton } from '@/components/ui/profile-button/confirm-mobi
 import { MainProfileButton } from '@/components/ui/profile-button/main-profile-button/MainProfileButton';
 import { useUserProfile } from '@/hooks/user/useUserProfile';
 import cn from 'classnames';
-import { Phone, User2, Wallet } from 'lucide-react';
+import { Car, Phone, User2, Wallet } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
 import styles from './ProfileMainInfo.module.scss';
@@ -25,15 +25,6 @@ export const ProfileMainInfo: React.FC<Props> = ({ className }) => {
 				{data?.middleName.length ? data.middleName : ''}
 			</h2>
 			<span className={styles.profileMainUserType}>
-				{/* {data?.type.length
-					? data.role !== 'admin'
-						? data.type === 'client'
-							? 'Клиент'
-							: data?.workerType === 'driver'
-							? 'Водитель'
-							: 'Грузчик'
-						: 'Неизвестный'
-					: 'Администратор'} */}
 				{data?.role.length && data.role === 'admin' && 'Администратор'}
 				{data?.type.length &&
 					data.role === 'user' &&
@@ -79,6 +70,17 @@ export const ProfileMainInfo: React.FC<Props> = ({ className }) => {
 						isConfirm={data?.isConfirmDriver ? data.isConfirmDriver : false}
 					/>
 				</li>
+				{data?.dimensions ? (
+					<li className={styles.profileMainListItem}>
+						<Car color='#4CAF50' />
+						<span className={styles.profileMainListItemHeader}>
+							Максимальные габариты:
+						</span>
+						<span className={styles.profileMainListItemText}>
+							{data.dimensions} м.
+						</span>
+					</li>
+				) : null}
 			</ul>
 			{/* <Link href={'/logout'}> */}
 			<MainProfileButton />

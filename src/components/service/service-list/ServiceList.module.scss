@@ -1,21 +1,39 @@
 .serviceListContainer {
 	display: flex;
-	gap: 16px;
+	gap: 12px;
 	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0 auto;
 
-	@media (min-width: 576px) {
-		gap: 20px;
+	// @media (min-width: 576px) {
+	// 	gap: 20px;
+	// }
+
+	@media (min-width: 636px) {
+		width: 636px;
+		gap: 14px;
+		justify-content: space-between;
+	}
+
+	@media (min-width: 716px) {
+		width: 680px;
+		gap: 4px;
+		padding: 0 6px;
 	}
 
 	@media (min-width: 768px) {
-		gap: 24px;
+		width: 720px;
+		gap: 22px;
 	}
 
 	@media (min-width: 992px) {
-		gap: 28px;
+		width: 760px;
+		gap: 24px;
 	}
 
 	@media (min-width: 1200px) {
-		gap: 32px;
+		justify-content: flex-start;
+		width: auto;
+		gap: 26px;
 	}
 }

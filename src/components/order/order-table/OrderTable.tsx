@@ -53,6 +53,20 @@ export const OrderTable: React.FC<Props> = ({ className, itemsPerPage }) => {
 		<>
 			<table className={cn(className, styles.cancelOrderTable)}>
 				<tbody className='flex flex-col gap-1'>
+					{data?.length ? (
+						<tr className={styles.confirmTableHeader}>
+							<td className={styles.confirmTableHeaderItem}>Дата/Время</td>
+							<td className={styles.confirmTableHeaderItem}>Сервис</td>
+							<td className={styles.orderTableItemAddress}>Адрес</td>
+							<td className={styles.confirmTableHeaderItem}>Цена</td>
+							<td className={styles.confirmTableHeaderItem}>Коммент</td>
+							<td className={styles.confirmTableHeaderItem}>Удаление</td>
+						</tr>
+					) : (
+						<tr>
+							<td>нет данных</td>
+						</tr>
+					)}
 					{data ? (
 						data
 							.slice(

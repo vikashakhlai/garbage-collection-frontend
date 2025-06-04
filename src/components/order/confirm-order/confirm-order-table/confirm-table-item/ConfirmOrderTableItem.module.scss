@@ -8,19 +8,63 @@
 	border-radius: 8px;
 	font-family: var(--font-montserrat), sans-serif;
 
-	font-size: 14px;
+	font-size: 8px;
 	font-weight: 700;
+
+	@media (min-width: 576px) {
+		font-size: 8px;
+	}
+
+	@media (min-width: 768px) {
+		font-size: 10px;
+	}
+
+	@media (min-width: 992px) {
+		font-size: 12px;
+	}
+
+	@media (min-width: 1200px) {
+		font-size: 14px;
+	}
 
 	td {
 		// max-width: 180px;
-		width: 90px;
+		width: 48px;
 		text-align: left;
+
+		@media (min-width: 576px) {
+			width: 54px;
+		}
+
+		@media (min-width: 768px) {
+			width: 72px;
+		}
+
+		@media (min-width: 992px) {
+			width: 80px;
+		}
+
+		@media (min-width: 1200px) {
+			width: 90px;
+		}
 	}
 
 	.cancelOrderTableItemTime {
-		font-size: 12px;
+		font-size: 6px;
 		font-weight: 600;
 		font-family: var(--font-openSans), sans-serif;
+
+		@media (min-width: 576px) {
+			font-size: 8px;
+		}
+
+		@media (min-width: 992px) {
+			font-size: 10px;
+		}
+
+		@media (min-width: 1200px) {
+			font-size: 12px;
+		}
 	}
 
 	.cancelButton {
@@ -38,5 +82,46 @@
 }
 
 .orderTableItemAddress {
-	width: 220px !important;
+	width: 80px !important;
+
+	@media (min-width: 576px) {
+		width: 100px !important;
+	}
+
+	@media (min-width: 768px) {
+		width: 140px !important;
+	}
+
+	@media (min-width: 992px) {
+		width: 180px !important;
+	}
+
+	@media (min-width: 1200px) {
+		width: 220px !important;
+	}
+}
+
+.icon {
+	width: 12px;
+	height: 12px;
+
+	@media (min-width: 576px) {
+		width: 14px;
+		height: 14px;
+	}
+
+	@media (min-width: 768px) {
+		width: 18px;
+		height: 18px;
+	}
+
+	@media (min-width: 992px) {
+		width: 24px;
+		height: 24px;
+	}
+
+	@media (min-width: 1200px) {
+		width: 28px;
+		height: 28px;
+	}
 }

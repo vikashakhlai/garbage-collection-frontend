@@ -25,10 +25,10 @@ export const Review: React.FC<Props> = ({ className }) => {
 		arrows: false,
 		responsive: [
 			{
-				breakpoint: 768, // На мобильных (до 768px)
+				breakpoint: 768,
 				settings: {
-					swipe: false, // Отключаем свайп
-					adaptiveHeight: true, // Автовысота под контент
+					swipe: false,
+					adaptiveHeight: true,
 					slidesToShow: 1,
 				},
 			},

@@ -55,13 +55,39 @@ export const ProfileMenu: React.FC<Props> = ({ className }) => {
 		slidesToScroll: 1,
 		prevArrow: <CustomPrevArrow />,
 		nextArrow: <CustomNextArrow />,
+		responsive: [
+			{
+				breakpoint: 320,
+				settings: {
+					slidesToShow: 1,
+				},
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 1,
+				},
+			},
+			{
+				breakpoint: 576,
+				settings: {
+					slidesToShow: 2,
+				},
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 2,
+				},
+			},
+		],
 	};
 
 	return (
 		<div className={cn(className, styles.profileMenuContainer)}>
 			<h2 className={styles.profileMenuHeader}>Меню профиля</h2>
 			{user?.role === 'admin' ? (
-				<div className='slider-container w-[560px] m-auto'>
+				<div className={cn(`slider-container  ${styles.profileMenuSlider}`)}>
 					<ul>
 						<Slider {...settings}>
 							<ProfileMenuItem
@@ -99,7 +125,7 @@ export const ProfileMenu: React.FC<Props> = ({ className }) => {
 					</ul>
 				</div>
 			) : (
-				<div className='slider-container w-[560px] m-auto'>
+				<div className={cn(`slider-container  ${styles.profileMenuSlider}`)}>
 					<ul>
 						<Slider {...settings}>
 							{user?.type && user.type === 'client' ? (
@@ -137,7 +163,13 @@ export const ProfileMenu: React.FC<Props> = ({ className }) => {
 									link='/manage/orders'
 								/>
 							)}
-
+							{user.role === 'user' && user.type === 'worker' && (
+								<ProfileMenuItem
+									icon={ListTodo}
+									text='Завершение заказов'
+									link='/process-order'
+								/>
+							)}
 							<ProfileMenuItem
 								icon={MessagesSquareIcon}
 								text='Техническая поддержка'

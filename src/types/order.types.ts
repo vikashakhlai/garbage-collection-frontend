@@ -10,9 +10,15 @@ export interface IOrder {
 	date: Date;
 	time: string;
 	address: string;
-	distance: number;
+	entrance?: string;
+	distance?: number;
+	hour: number;
+	dimensions: number;
+	weight: number;
 	floor: number;
-	comment: string;
+	comment?: string;
+	isHeavy: boolean;
+	isDisassembly: boolean;
 	servicesIds?: number[];
 	userIds?: number;
 	services?: [

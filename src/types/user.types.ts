@@ -9,10 +9,11 @@ export interface IUser {
 	role: string;
 	gender: string;
 	type: string;
+	password?: string | undefined;
 	workerType?: string;
 	lastWork?: string;
 	workTime?: string;
 	isConfirmDriver?: boolean;
 	licenseImage?: string;
-	password?: string | undefined;
+	dimensions?: number;
 }

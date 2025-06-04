@@ -9,9 +9,25 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 20px 16px;
+	padding: 12px 8px;
 	cursor: pointer;
 	transition: all 0.4s ease-in-out;
+
+	@media (min-width: 576px) {
+		padding: 14px 10px;
+	}
+
+	@media (min-width: 768px) {
+		padding: 16px 12px;
+	}
+
+	@media (min-width: 992px) {
+		padding: 18px 14px;
+	}
+
+	@media (min-width: 1200px) {
+		padding: 20px 16px;
+	}
 
 	&:hover {
 		color: #4caf50;
@@ -27,7 +43,23 @@
 	text-align: left;
 	font-family: var(--font-montserrat), sans-serif;
 	font-weight: 600;
-	font-size: 20px;
+	font-size: 12px;
+
+	@media (min-width: 576px) {
+		font-size: 14px;
+	}
+
+	@media (min-width: 768px) {
+		font-size: 16px;
+	}
+
+	@media (min-width: 992px) {
+		font-size: 18px;
+	}
+
+	@media (min-width: 1200px) {
+		font-size: 20px;
+	}
 }
 
 .accordionContent {
@@ -62,9 +94,27 @@
 	text-align: left;
 	display: flex;
 	font-family: var(--font-openSans), sans-serif;
-	font-size: 16px;
+	font-size: 10px;
 	font-weight: 400;
-	padding: 20px 100px 20px 16px;
 	color: #666666;
-	min-height: 160px;
+	min-height: 80px;
+	padding: 12px 40px 12px 10px;
+
+	@media (min-width: 768px) {
+		font-size: 12px;
+		padding: 14px 60px 14px 12px;
+		min-height: 100px;
+	}
+
+	@media (min-width: 992px) {
+		font-size: 14px;
+		padding: 16px 80px 16px 14px;
+		min-height: 120px;
+	}
+
+	@media (min-width: 1200px) {
+		min-height: 160px;
+		font-size: 16px;
+		padding: 20px 100px 20px 16px;
+	}
 }
